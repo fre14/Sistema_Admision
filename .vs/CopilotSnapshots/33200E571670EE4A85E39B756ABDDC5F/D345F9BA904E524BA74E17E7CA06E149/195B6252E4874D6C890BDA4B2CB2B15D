@@ -1,0 +1,44 @@
+﻿using System.Data;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Postulantes
+/// </summary>
+public class PostulanteRepository : Repository<Postulante>, IPostulanteRepository
+{
+    protected override string TableName => "Postulantes";
+
+    public PostulanteRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Busca postulantes por número de documento
+    /// </summary>
+    public async Task<Postulante?> GetByNumeroDocumentoAsync(string numeroDocumento)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE NumeroDocumento = @NumeroDocumento";
+            return await connection.QueryFirstOrDefaultAsync<Postulante>(query, new { NumeroDocumento = numeroDocumento });
+        }
+    }
+
+    /// <summary>
+    /// Busca postulantes por correo electrónico
+    /// </summary>
+    public async Task<Postulante?> GetByCorreoAsync(string correo)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE Correo = @Correo";
+            return await connection.QueryFirstOrDefaultAsync<Postulante>(query, new { Correo = correo });
+        }
+    }
+}

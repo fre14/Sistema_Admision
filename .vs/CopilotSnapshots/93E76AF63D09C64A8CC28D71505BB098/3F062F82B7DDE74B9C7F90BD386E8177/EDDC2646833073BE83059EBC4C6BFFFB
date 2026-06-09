@@ -1,0 +1,19 @@
+﻿var builder = DistributedApplication.CreateBuilder(args);
+
+var server = builder.AddProject<Projects.SAA_API_Server>("server")
+    .WithHttpHealthCheck("/health")
+    .WithExternalHttpEndpoints();
+
+var webfrontend = builder.AddViteApp("webfrontend", "../frontend")
+    .WithReference(server)
+    .WaitFor(server);
+
+server.PublishWithContainerFiles(webfrontend, "wwwroot");
+
+// ❌ INCORRECTO - Causa el error
+app.MapGet("/algo", (db) => { ... });
+app.MapDelete("/algo", (db) => { ... });
+
+// ✅ CORRECTO
+app.MapGet("/algo", ([FromServices] db) => { ... });
+app.MapDelete("/algo", ([FromServices] db) => { ... });builder.Build().Run();

@@ -1,0 +1,30 @@
+C:\calidad labo\SAA.Solution\SAA.Application\bin\Debug\net10.0\SAA.Application.deps.json
+C:\calidad labo\SAA.Solution\SAA.Application\bin\Debug\net10.0\SAA.Application.dll
+C:\calidad labo\SAA.Solution\SAA.Application\bin\Debug\net10.0\SAA.Application.pdb
+C:\calidad labo\SAA.Solution\SAA.Application\bin\Debug\net10.0\SAA.Domain.dll
+C:\calidad labo\SAA.Solution\SAA.Application\bin\Debug\net10.0\SAA.Domain.pdb
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Application.csproj.AssemblyReference.cache
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Application.AssemblyInfoInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Application.AssemblyInfo.cs
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Application.csproj.CoreCompileInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Appl.7CF6EA8C.Up2Date
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Application.dll
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\refint\SAA.Application.dll
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\SAA.Application.pdb
+C:\calidad labo\SAA.Solution\SAA.Application\obj\Debug\net10.0\ref\SAA.Application.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\bin\Debug\net10.0\SAA.Application.deps.json
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\bin\Debug\net10.0\SAA.Application.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\bin\Debug\net10.0\SAA.Application.pdb
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\bin\Debug\net10.0\SAA.Domain.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\bin\Debug\net10.0\SAA.Domain.pdb
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Application.csproj.AssemblyReference.cache
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Application.AssemblyInfoInputs.cache
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Application.AssemblyInfo.cs
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Application.csproj.CoreCompileInputs.cache
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Appl.7CF6EA8C.Up2Date
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Application.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\refint\SAA.Application.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\SAA.Application.pdb
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\obj\Debug\net10.0\ref\SAA.Application.dll

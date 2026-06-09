@@ -1,0 +1,248 @@
+﻿## From full 'Depurar' logs:
+'SAA.API.Server.exe' (CoreCLR: DefaultDomain): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Private.CoreLib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\SAA.API.Server.dll' cargado. Símbolos cargados.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Runtime.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'c:\program files\microsoft visual studio\18\community\common7\ide\extensions\microsoft\managedprojectsystem\HotReload\net10.0\Microsoft.Extensions.DotNetDeltaApplier.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Linq.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Runtime.Loader.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Console.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Private.Uri.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.IO.Pipes.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Collections.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Runtime.InteropServices.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Collections.Concurrent.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Threading.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Threading.Overlapped.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Security.AccessControl.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Security.Principal.Windows.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Security.Claims.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Hosting.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.DependencyInjection.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Logging.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Diagnostics.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Configuration.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Http.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Routing.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.ComponentModel.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Features.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Http.Extensions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Configuration.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Primitives.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\SAA.Infrastructure.dll' cargado. Símbolos cargados.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\SAA.Domain.dll' cargado. Símbolos cargados.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Diagnostics.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Hosting.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.StaticFiles.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\PrivateAssemblies\Runtime\Microsoft.VisualStudio.Debugger.Runtime.NetCoreApp.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+Ir a: paso a paso por procedimientos en código 'Program.<>c__DisplayClass0_0..ctor' que no es de usuario
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Hosting.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Hosting.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Configuration.EnvironmentVariables.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.FileProviders.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.FileProviders.Physical.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Configuration.FileExtensions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Options.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Logging.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Diagnostics.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Diagnostics.DiagnosticSource.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Configuration.Binder.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Configuration.Json.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Memory.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.IO.FileSystem.Watcher.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.ComponentModel.Primitives.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\Microsoft.Win32.Primitives.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Text.Json.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Text.Encoding.Extensions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.IO.Pipelines.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Configuration.UserSecrets.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Mvc.Core.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Logging.EventLog.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Logging.Configuration.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Options.ConfigurationExtensions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Logging.Console.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Logging.Debug.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Logging.EventSource.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Diagnostics.Tracing.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.DependencyInjection.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Server.Kestrel.Core.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Server.Kestrel.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Net.Quic.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Net.Sockets.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Net.Primitives.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\Microsoft.Win32.Registry.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Server.IIS.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Server.IISIntegration.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Http.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Connections.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.ObjectPool.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.HostFiltering.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.HttpOverrides.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Routing.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.ObjectModel.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Microsoft.Extensions.ServiceDiscovery.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Http.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.Extensions.Hosting.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.Api.ProviderBuilderExtensions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.Api.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.IO.MemoryMappedFiles.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.Instrumentation.AspNetCore.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.Instrumentation.Http.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.Instrumentation.Runtime.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Collections.Immutable.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Net.Http.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\OpenTelemetry.Exporter.OpenTelemetryProtocol.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Diagnostics.HealthChecks.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Microsoft.Extensions.ServiceDiscovery.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Microsoft.Extensions.Http.Resilience.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Polly.Core.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Polly.Extensions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Microsoft.Extensions.Diagnostics.ExceptionSummarization.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Microsoft.OpenApi.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Mvc.ApiExplorer.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Mvc.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Threading.Thread.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Threading.ThreadPool.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Diagnostics.Process.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\System.Diagnostics.EventLog.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Collections.Specialized.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.ComponentModel.TypeConverter.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Text.Encodings.Web.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Numerics.Vectors.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Reflection.Emit.Lightweight.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Reflection.Emit.ILGeneration.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Reflection.Primitives.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Http.Features.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Text.RegularExpressions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\bin\Debug\net10.0\Polly.RateLimiting.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\System.Threading.RateLimiting.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.ComponentModel.Annotations.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Authentication.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Authorization.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: Warning: The WebRootPath was not found: C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\wwwroot. Static files may be unavailable.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.Diagnostics.Abstractions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Net.Http.Headers.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Security.Cryptography.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Collections.NonGeneric.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Runtime.Intrinsics.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Net.Security.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+Microsoft.Hosting.Lifetime: Information: Now listening on: http://localhost:5000
+Microsoft.Hosting.Lifetime: Information: Application started. Press Ctrl+C to shut down.
+Microsoft.Hosting.Lifetime: Information: Hosting environment: Development
+Microsoft.Hosting.Lifetime: Information: Content root path: C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server
+El subproceso '.NET TP Worker' (26224) terminó con código 0 (0x0).
+El subproceso '.NET TP Worker' (28604) terminó con código 0 (0x0).
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Net.WebSockets.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.Extensions.Validation.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Linq.Expressions.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'Anonymously Hosted DynamicMethods Assembly' cargado. 
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Runtime.Numerics.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Diagnostics.StackTrace.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\10.0.8\System.Reflection.Metadata.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware: Error: An unhandled exception has occurred while executing the request.
+
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+db                  | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|10_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+'SAA.API.Server.exe' (CoreCLR: clrhost): 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\10.0.8\Microsoft.AspNetCore.WebUtilities.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware: Error: An unhandled exception has occurred while executing the request.
+
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+db                  | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|10_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+El subproceso '.NET TP Worker' (8052) terminó con código 0 (0x0).
+El subproceso '.NET TP Worker' (16612) terminó con código 0 (0x0).
+El subproceso 24204 terminó con código 0 (0x0).
+Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware: Error: An unhandled exception has occurred while executing the request.
+
+System.InvalidOperationException: Body was inferred but the method does not allow inferred body parameters.
+Below is the list of parameters that we found: 
+
+Parameter           | Source                        
+---------------------------------------------------------------------------------
+db                  | Body (Inferred)
+
+
+Did you mean to register the "Body (Inferred)" parameter(s) as a Service or apply the [FromServices] or [FromBody] attribute?
+
+
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArguments(ParameterInfo[] parameters, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.CreateArgumentsAndInferMetadata(MethodInfo methodInfo, RequestDelegateFactoryContext factoryContext)
+   at Microsoft.AspNetCore.Http.RequestDelegateFactory.InferMetadata(MethodInfo methodInfo, RequestDelegateFactoryOptions options)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.CreateRouteEndpointBuilder(RouteEntry entry, RoutePattern groupPrefix, IReadOnlyList`1 groupConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Routing.RouteEndpointDataSource.GetGroupedEndpoints(RouteGroupContext context)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.GetGroupedEndpointsWithNullablePrefix(RoutePattern prefix, IReadOnlyList`1 conventions, IReadOnlyList`1 finallyConventions, IServiceProvider applicationServices)
+   at Microsoft.AspNetCore.Routing.RouteGroupBuilder.GroupEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateEndpointsUnsynchronized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureEndpointsInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.get_Endpoints()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DataSourceDependentMatcher..ctor(EndpointDataSource dataSource, Lifetime lifetime, Func`1 matcherBuilderFactory)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcherFactory.CreateMatcher(EndpointDataSource dataSource)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.InitializeCoreAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.<Invoke>g__AwaitMatcher|10_0(EndpointRoutingMiddleware middleware, HttpContext httpContext, Task`1 matcherTask)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+El programa '[12100] SAA.API.Server.exe' terminó con código 3221225786 (0xc000013a).

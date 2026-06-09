@@ -1,0 +1,170 @@
+﻿using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using SAA.Application.DTOs;
+
+namespace SAA.Infrastructure.Services;
+
+/// <summary>
+/// Servicio para generar reportes en PDF y otros formatos
+/// </summary>
+public class ReporteExportService
+{
+    /// <summary>
+    /// Genera un PDF con el reporte de ingresos
+    /// </summary>
+    public byte[] GenerarReportePDF(ReporteIngresoDto reporte)
+    {
+        using (var memoryStream = new MemoryStream())
+        {
+            // Crear documento PDF
+            var pdfWriter = new PdfWriter(memoryStream);
+            var pdfDocument = new PdfDocument(pdfWriter);
+            var document = new Document(pdfDocument);
+
+            // Agregar título
+            document.Add(new Paragraph("REPORTE DE INGRESOS DE POSTULANTES")
+                .SetFontSize(16)
+                .SetBold()
+                .SetTextAlignment(TextAlignment.CENTER));
+
+            document.Add(new Paragraph("Sistema Automatizado de Admisión - SAA")
+                .SetFontSize(10)
+                .SetTextAlignment(TextAlignment.CENTER));
+
+            document.Add(new Paragraph($"Generado: {DateTime.Now:dd/MM/yyyy HH:mm:ss}")
+                .SetFontSize(9)
+                .SetTextAlignment(TextAlignment.RIGHT));
+
+            document.Add(new Paragraph(" ")); // Espacio
+
+            // Resumen
+            document.Add(new Paragraph($"Total de Ingresos Registrados: {reporte.TotalIngresos}")
+                .SetFontSize(11)
+                .SetBold());
+
+            if (reporte.Registros.Any())
+            {
+                var fechaInicio = reporte.Registros.Min(r => r.FechaHoraIngreso).ToString("dd/MM/yyyy");
+                var fechaFin = reporte.Registros.Max(r => r.FechaHoraIngreso).ToString("dd/MM/yyyy");
+                document.Add(new Paragraph($"Período: {fechaInicio} - {fechaFin}")
+                    .SetFontSize(9));
+            }
+
+            document.Add(new Paragraph(" ")); // Espacio
+
+            // Crear tabla
+            var table = new Table(5);
+            table.SetWidth(UnitValue.CreatePercentValue(100));
+
+            // Encabezados
+            var headers = new[] { "Nº", "Nombre Postulante", "Fecha/Hora", "Registrado por", "Observaciones" };
+            foreach (var header in headers)
+            {
+                table.AddHeaderCell(new Cell().Add(new Paragraph(header).SetBold()));
+            }
+
+            // Filas de datos
+            int numero = 1;
+            foreach (var registro in reporte.Registros)
+            {
+                table.AddCell(new Cell().Add(new Paragraph(numero.ToString())));
+                table.AddCell(new Cell().Add(new Paragraph(registro.NombrePostulante)));
+                table.AddCell(new Cell().Add(new Paragraph(registro.FechaHoraIngreso.ToString("dd/MM/yyyy HH:mm"))));
+                table.AddCell(new Cell().Add(new Paragraph(registro.UsuarioRegistro)));
+                table.AddCell(new Cell().Add(new Paragraph(registro.Observaciones ?? "-")));
+                numero++;
+            }
+
+            document.Add(table);
+            document.Add(new Paragraph(" ")); // Espacio
+
+            // Pie de página
+            document.Add(new Paragraph("Este documento contiene información confidencial. Solo personal autorizado puede acceder a estos datos.")
+                .SetFontSize(8)
+                .SetItalic()
+                .SetTextAlignment(TextAlignment.CENTER));
+
+            document.Close();
+            return memoryStream.ToArray();
+        }
+    }
+
+    /// <summary>
+    /// Genera un CSV con el reporte de ingresos
+    /// </summary>
+    public byte[] GenerarReporteCSV(ReporteIngresoDto reporte)
+    {
+        var sb = new System.Text.StringBuilder();
+
+        // Encabezado del CSV
+        sb.AppendLine("Nº,Nombre Postulante,ID Postulante,Fecha/Hora Ingreso,Registrado por,Observaciones");
+
+        // Filas de datos
+        int numero = 1;
+        foreach (var registro in reporte.Registros)
+        {
+            var observaciones = (registro.Observaciones ?? "").Replace(",", ";"); // Reemplazar comas para evitar problemas
+            sb.AppendLine($"{numero}," +
+                $"\"{registro.NombrePostulante}\"," +
+                $"{registro.IdPostulante}," +
+                $"\"{registro.FechaHoraIngreso:dd/MM/yyyy HH:mm:ss}\"," +
+                $"\"{registro.UsuarioRegistro}\"," +
+                $"\"{observaciones}\"");
+            numero++;
+        }
+
+        return System.Text.Encoding.UTF8.GetBytes(sb.ToString());
+    }
+
+    /// <summary>
+    /// Genera un archivo de texto con el reporte de ingresos
+    /// </summary>
+    public byte[] GenerarReporteTexto(ReporteIngresoDto reporte)
+    {
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine("================================================================================");
+        sb.AppendLine("                   REPORTE DE INGRESOS DE POSTULANTES");
+        sb.AppendLine("            Sistema Automatizado de Admisión - SAA");
+        sb.AppendLine("================================================================================");
+        sb.AppendLine();
+        sb.AppendLine($"Fecha de Generación: {DateTime.Now:dd/MM/yyyy HH:mm:ss}");
+        sb.AppendLine($"Total de Ingresos: {reporte.TotalIngresos}");
+
+        if (reporte.Registros.Any())
+        {
+            var fechaInicio = reporte.Registros.Min(r => r.FechaHoraIngreso).ToString("dd/MM/yyyy");
+            var fechaFin = reporte.Registros.Max(r => r.FechaHoraIngreso).ToString("dd/MM/yyyy");
+            sb.AppendLine($"Período: {fechaInicio} - {fechaFin}");
+        }
+
+        sb.AppendLine();
+        sb.AppendLine("================================================================================");
+        sb.AppendLine($"{"Nº",-5} | {"Nombre Postulante",-30} | {"Fecha/Hora",-18} | {"Registrado por",-15}");
+        sb.AppendLine("================================================================================");
+
+        int numero = 1;
+        foreach (var registro in reporte.Registros)
+        {
+            var nombre = registro.NombrePostulante.Length > 30 
+                ? registro.NombrePostulante.Substring(0, 27) + "..." 
+                : registro.NombrePostulante;
+
+            sb.AppendLine($"{numero,-5} | {nombre,-30} | {registro.FechaHoraIngreso:dd/MM/yyyy HH:mm} | {registro.UsuarioRegistro,-15}");
+
+            if (!string.IsNullOrEmpty(registro.Observaciones))
+            {
+                sb.AppendLine($"       | Obs: {registro.Observaciones}");
+            }
+
+            numero++;
+        }
+
+        sb.AppendLine("================================================================================");
+        sb.AppendLine("CONFIDENCIAL - Solo personal autorizado puede acceder a estos datos");
+        sb.AppendLine("================================================================================");
+
+        return System.Text.Encoding.UTF8.GetBytes(sb.ToString());
+    }
+}

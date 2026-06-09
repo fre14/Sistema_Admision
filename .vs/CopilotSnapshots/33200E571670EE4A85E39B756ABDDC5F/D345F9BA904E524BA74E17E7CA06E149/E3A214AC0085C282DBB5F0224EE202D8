@@ -1,0 +1,45 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Usuarios
+/// </summary>
+public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
+{
+    protected override string TableName => "Usuarios";
+
+    public UsuarioRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Busca un usuario por nombre de usuario
+    /// </summary>
+    public async Task<Usuario?> GetByNombreUsuarioAsync(string nombreUsuario)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE NombreUsuario = @NombreUsuario";
+            return await connection.QueryFirstOrDefaultAsync<Usuario>(query, new { NombreUsuario = nombreUsuario });
+        }
+    }
+
+    /// <summary>
+    /// Busca un usuario por correo electrónico
+    /// </summary>
+    public async Task<Usuario?> GetByCorreoAsync(string correo)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE Correo = @Correo";
+            return await connection.QueryFirstOrDefaultAsync<Usuario>(query, new { Correo = correo });
+        }
+    }
+}

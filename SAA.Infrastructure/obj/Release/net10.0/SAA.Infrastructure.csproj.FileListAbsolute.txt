@@ -1,0 +1,17 @@
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Release\net10.0\SAA.Infrastructure.deps.json
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Release\net10.0\SAA.Infrastructure.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Release\net10.0\SAA.Infrastructure.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Release\net10.0\SAA.Application.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Release\net10.0\SAA.Domain.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Release\net10.0\SAA.Application.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Release\net10.0\SAA.Domain.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infrastructure.csproj.AssemblyReference.cache
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infrastructure.AssemblyInfoInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infrastructure.AssemblyInfo.cs
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infrastructure.csproj.CoreCompileInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infr.4DDF6851.Up2Date
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infrastructure.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\refint\SAA.Infrastructure.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\SAA.Infrastructure.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Release\net10.0\ref\SAA.Infrastructure.dll

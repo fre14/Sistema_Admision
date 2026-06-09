@@ -1,0 +1,12 @@
+C:\calidad labo\SAA.Solution\SAA.Domain\bin\Release\net10.0\SAA.Domain.deps.json
+C:\calidad labo\SAA.Solution\SAA.Domain\bin\Release\net10.0\SAA.Domain.dll
+C:\calidad labo\SAA.Solution\SAA.Domain\bin\Release\net10.0\SAA.Domain.pdb
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\SAA.Domain.csproj.AssemblyReference.cache
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\SAA.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\SAA.Domain.AssemblyInfoInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\SAA.Domain.AssemblyInfo.cs
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\SAA.Domain.csproj.CoreCompileInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\SAA.Domain.dll
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\refint\SAA.Domain.dll
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\SAA.Domain.pdb
+C:\calidad labo\SAA.Solution\SAA.Domain\obj\Release\net10.0\ref\SAA.Domain.dll

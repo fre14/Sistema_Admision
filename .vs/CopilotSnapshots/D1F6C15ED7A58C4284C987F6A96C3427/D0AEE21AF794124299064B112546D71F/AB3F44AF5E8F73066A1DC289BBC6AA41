@@ -1,0 +1,199 @@
+﻿using QuestPDF.Fluent;
+using QuestPDF.Infrastructure;
+using SAA.Application.DTOs;
+using System.Globalization;
+
+namespace SAA.Infrastructure.Services;
+
+/// <summary>
+/// Servicio para generar reportes en PDF
+/// </summary>
+public class ReporteExportService
+{
+    /// <summary>
+    /// Genera un PDF con el reporte de ingresos
+    /// </summary>
+    public byte[] GenerarReportePDF(ReporteIngresoDto reporte)
+    {
+        var documento = Document.Create(container =>
+        {
+            container.Page(page =>
+            {
+                page.Size(PageSizes.A4);
+                page.Margin(20);
+
+                page.Header().Element(header =>
+                {
+                    header.Column(col =>
+                    {
+                        col.Item().Text("REPORTE DE INGRESOS DE POSTULANTES")
+                            .FontSize(18)
+                            .Bold()
+                            .AlignCenter();
+
+                        col.Item().Text("Sistema Automatizado de Admisión - SAA")
+                            .FontSize(10)
+                            .AlignCenter()
+                            .Italic();
+
+                        col.Item().PaddingTop(10).Text(
+                            $"Fecha de Generación: {DateTime.Now:dd/MM/yyyy HH:mm:ss}")
+                            .FontSize(9)
+                            .AlignRight();
+
+                        col.Item().PaddingBottom(10).LineHorizontal(1);
+                    });
+                });
+
+                page.Content().Element(content =>
+                {
+                    content.Column(col =>
+                    {
+                        // Resumen
+                        col.Item().PaddingBottom(15).Element(resumen =>
+                        {
+                            resumen.Column(rcol =>
+                            {
+                                rcol.Item().Text($"Total de Ingresos Registrados: {reporte.TotalIngresos}")
+                                    .FontSize(12)
+                                    .Bold();
+
+                                rcol.Item().PaddingTop(5).Text(
+                                    $"Período: {(reporte.Registros.Any() ? $"{reporte.Registros.Min(r => r.FechaHoraIngreso):dd/MM/yyyy}" : "N/A")} - " +
+                                    $"{(reporte.Registros.Any() ? $"{reporte.Registros.Max(r => r.FechaHoraIngreso):dd/MM/yyyy}" : "N/A")}")
+                                    .FontSize(10);
+                            });
+                        });
+
+                        // Tabla de ingresos
+                        col.Item().Element(tabla =>
+                        {
+                            tabla.Table(table =>
+                            {
+                                table.ColumnsDefinition(columns =>
+                                {
+                                    columns.RelativeColumn(0.5);  // Nº
+                                    columns.RelativeColumn(2);    // Nombre Postulante
+                                    columns.RelativeColumn(1.5);  // Fecha/Hora
+                                    columns.RelativeColumn(1.5);  // Usuario Registro
+                                    columns.RelativeColumn(1.5);  // Observaciones
+                                });
+
+                                // Encabezado
+                                table.Header(header =>
+                                {
+                                    header.Cell().Background("#E8E8E8").Padding(5)
+                                        .Text("Nº").FontSize(9).Bold();
+                                    header.Cell().Background("#E8E8E8").Padding(5)
+                                        .Text("Nombre Postulante").FontSize(9).Bold();
+                                    header.Cell().Background("#E8E8E8").Padding(5)
+                                        .Text("Fecha/Hora Ingreso").FontSize(9).Bold();
+                                    header.Cell().Background("#E8E8E8").Padding(5)
+                                        .Text("Registrado por").FontSize(9).Bold();
+                                    header.Cell().Background("#E8E8E8").Padding(5)
+                                        .Text("Observaciones").FontSize(9).Bold();
+                                });
+
+                                // Filas de datos
+                                int numero = 1;
+                                foreach (var registro in reporte.Registros)
+                                {
+                                    table.Cell().Padding(5).BorderBottom(0.5f)
+                                        .Text(numero.ToString()).FontSize(8);
+                                    table.Cell().Padding(5).BorderBottom(0.5f)
+                                        .Text(registro.NombrePostulante).FontSize(8);
+                                    table.Cell().Padding(5).BorderBottom(0.5f)
+                                        .Text(registro.FechaHoraIngreso.ToString("dd/MM/yyyy HH:mm")).FontSize(8);
+                                    table.Cell().Padding(5).BorderBottom(0.5f)
+                                        .Text(registro.UsuarioRegistro).FontSize(8);
+                                    table.Cell().Padding(5).BorderBottom(0.5f)
+                                        .Text(registro.Observaciones ?? "-").FontSize(8);
+
+                                    numero++;
+                                }
+                            });
+                        });
+
+                        // Pie de página
+                        col.Item().PaddingTop(20).LineHorizontal(1);
+                        col.Item().PaddingTop(5).Element(pie =>
+                        {
+                            pie.Row(row =>
+                            {
+                                row.RelativeColumn().Text("Este documento contiene información confidencial. Solo personal autorizado puede acceder a estos datos.")
+                                    .FontSize(8)
+                                    .Italic()
+                                    .AlignCenter();
+                            });
+                        });
+                    });
+                });
+
+                page.Footer().Element(footer =>
+                {
+                    footer.AlignCenter().Text(
+                        $"Página {(int)(DateTime.Now.Ticks / 10000)} - Generado: {DateTime.Now:yyyy-MM-dd HH:mm:ss}")
+                        .FontSize(8);
+                });
+            });
+        });
+
+        return documento.GeneratePdf();
+    }
+
+    /// <summary>
+    /// Genera un CSV con el reporte de ingresos
+    /// </summary>
+    public byte[] GenerarReporteCSV(ReporteIngresoDto reporte)
+    {
+        var sb = new System.Text.StringBuilder();
+
+        // Encabezado del CSV
+        sb.AppendLine("Nº,Nombre Postulante,ID Postulante,Fecha/Hora Ingreso,Registrado por,Observaciones");
+
+        // Filas de datos
+        int numero = 1;
+        foreach (var registro in reporte.Registros)
+        {
+            var observaciones = (registro.Observaciones ?? "").Replace(",", ";"); // Reemplazar comas para evitar problemas
+            sb.AppendLine($"{numero}," +
+                $"\"{registro.NombrePostulante}\"," +
+                $"{registro.IdPostulante}," +
+                $"\"{registro.FechaHoraIngreso:dd/MM/yyyy HH:mm:ss}\"," +
+                $"\"{registro.UsuarioRegistro}\"," +
+                $"\"{observaciones}\"");
+            numero++;
+        }
+
+        return System.Text.Encoding.UTF8.GetBytes(sb.ToString());
+    }
+
+    /// <summary>
+    /// Genera un Excel con el reporte de ingresos
+    /// </summary>
+    public byte[] GenerarReporteExcel(ReporteIngresoDto reporte)
+    {
+        // Usar EPPlus o similar para generar Excel
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine("REPORTE DE INGRESOS DE POSTULANTES");
+        sb.AppendLine($"Generado: {DateTime.Now:dd/MM/yyyy HH:mm:ss}");
+        sb.AppendLine($"Total de Ingresos: {reporte.TotalIngresos}");
+        sb.AppendLine("");
+        sb.AppendLine("Nº,Nombre Postulante,ID Postulante,Fecha/Hora Ingreso,Registrado por,Observaciones");
+
+        int numero = 1;
+        foreach (var registro in reporte.Registros)
+        {
+            var observaciones = (registro.Observaciones ?? "").Replace(",", ";");
+            sb.AppendLine($"{numero}," +
+                $"\"{registro.NombrePostulante}\"," +
+                $"{registro.IdPostulante}," +
+                $"\"{registro.FechaHoraIngreso:dd/MM/yyyy HH:mm:ss}\"," +
+                $"\"{registro.UsuarioRegistro}\"," +
+                $"\"{observaciones}\"");
+            numero++;
+        }
+
+        return System.Text.Encoding.UTF8.GetBytes(sb.ToString());
+    }
+}

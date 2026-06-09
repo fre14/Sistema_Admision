@@ -1,0 +1,3332 @@
+{
+  "SAA.API.Server.dll": {
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.API\\SAA.API.Server\\Program.cs": {
+      "Program/<<Main>$>d__0": {
+        "System.Void Program/<<Main>$>d__0::MoveNext()": {
+          "Lines": {
+            "12": 1,
+            "14": 1,
+            "17": 1,
+            "18": 1,
+            "21": 1,
+            "22": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 2,
+            "41": 1,
+            "44": 1,
+            "45": 1,
+            "48": 1,
+            "49": 2,
+            "52": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 2,
+            "67": 2,
+            "69": 1,
+            "71": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "78": 1,
+            "79": 1,
+            "81": 1,
+            "82": 1,
+            "84": 1,
+            "85": 1,
+            "87": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "94": 1,
+            "95": 1,
+            "96": 1,
+            "97": 1,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 1,
+            "105": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 139,
+              "EndOffset": 141,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 139,
+              "EndOffset": 147,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 44,
+              "Offset": 283,
+              "EndOffset": 285,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 44,
+              "Offset": 283,
+              "EndOffset": 297,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 74,
+              "Offset": 589,
+              "EndOffset": 591,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 74,
+              "Offset": 589,
+              "EndOffset": 593,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.API\\SAA.API.Server\\Extensions.cs": {
+      "Microsoft.Extensions.Hosting.Extensions": {
+        "TBuilder Microsoft.Extensions.Hosting.Extensions::AddServiceDefaults(TBuilder)": {
+          "Lines": {
+            "22": 1,
+            "23": 1,
+            "25": 1,
+            "27": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 2,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 29,
+              "Offset": 53,
+              "EndOffset": 78,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "TBuilder Microsoft.Extensions.Hosting.Extensions::ConfigureOpenTelemetry(TBuilder)": {
+          "Lines": {
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "51": 1,
+            "52": 1,
+            "53": 2,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "67": 1,
+            "68": 2,
+            "69": 2,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 2,
+            "76": 1,
+            "78": 1,
+            "79": 1
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 37,
+              "EndOffset": 62,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 96,
+              "EndOffset": 98,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 55,
+              "Offset": 96,
+              "EndOffset": 121,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 67,
+              "Offset": 7,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 29,
+              "EndOffset": 31,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 68,
+              "Offset": 29,
+              "EndOffset": 65,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 64,
+              "Offset": 44,
+              "EndOffset": 46,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 64,
+              "Offset": 44,
+              "EndOffset": 69,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "TBuilder Microsoft.Extensions.Hosting.Extensions::AddOpenTelemetryExporters(TBuilder)": {
+          "Lines": {
+            "82": 1,
+            "83": 1,
+            "85": 1,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "97": 1,
+            "98": 1
+          },
+          "Branches": [
+            {
+              "Line": 85,
+              "Offset": 36,
+              "EndOffset": 38,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 85,
+              "Offset": 36,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "TBuilder Microsoft.Extensions.Hosting.Extensions::AddDefaultHealthChecks(TBuilder)": {
+          "Lines": {
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "106": 1,
+            "107": 1
+          },
+          "Branches": [
+            {
+              "Line": 102,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 102,
+              "Offset": 30,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Builder.WebApplication Microsoft.Extensions.Hosting.Extensions::MapDefaultEndpoints(Microsoft.AspNetCore.Builder.WebApplication)": {
+          "Lines": {
+            "110": 1,
+            "113": 1,
+            "114": 1,
+            "116": 1,
+            "119": 1,
+            "120": 1,
+            "121": 0,
+            "122": 1,
+            "123": 1,
+            "125": 1,
+            "126": 1
+          },
+          "Branches": [
+            {
+              "Line": 113,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 113,
+              "Offset": 14,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.API\\SAA.API.Server\\Controllers\\AdmisionController.cs": {
+      "SAA.API.Server.Controllers.AdmisionController": {
+        "System.Void SAA.API.Server.Controllers.AdmisionController::.ctor(SAA.Application.Services.MotorAdmisionService)": {
+          "Lines": {
+            "15": 4,
+            "16": 4,
+            "17": 4,
+            "18": 4
+          },
+          "Branches": []
+        }
+      },
+      "SAA.API.Server.Controllers.AdmisionController/<ObtenerReporteIngresantes>d__4": {
+        "System.Void SAA.API.Server.Controllers.AdmisionController/<ObtenerReporteIngresantes>d__4::MoveNext()": {
+          "Lines": {
+            "50": 1,
+            "52": 1,
+            "53": 1,
+            "54": 1,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "60": 1
+          },
+          "Branches": []
+        }
+      },
+      "SAA.API.Server.Controllers.AdmisionController/<ObtenerReporteTodos>d__5": {
+        "System.Void SAA.API.Server.Controllers.AdmisionController/<ObtenerReporteTodos>d__5::MoveNext()": {
+          "Lines": {
+            "64": 1,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "74": 1
+          },
+          "Branches": []
+        }
+      },
+      "SAA.API.Server.Controllers.AdmisionController/<ProcesarResultados>d__3": {
+        "System.Void SAA.API.Server.Controllers.AdmisionController/<ProcesarResultados>d__3::MoveNext()": {
+          "Lines": {
+            "36": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "46": 1
+          },
+          "Branches": []
+        }
+      },
+      "SAA.API.Server.Controllers.AdmisionController/<RegistrarExamen>d__2": {
+        "System.Void SAA.API.Server.Controllers.AdmisionController/<RegistrarExamen>d__2::MoveNext()": {
+          "Lines": {
+            "22": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "32": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.API\\SAA.API.Server\\Controllers\\AuthController.cs": {
+      "SAA.API.Server.Controllers.AuthController": {
+        "System.Void SAA.API.Server.Controllers.AuthController::.ctor(SAA.Application.Services.AuthService)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      },
+      "SAA.API.Server.Controllers.AuthController/<Login>d__2": {
+        "System.Void SAA.API.Server.Controllers.AuthController/<Login>d__2::MoveNext()": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 39,
+              "EndOffset": 69,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 224,
+              "EndOffset": 226,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 224,
+              "EndOffset": 246,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.API\\SAA.API.Server\\Controllers\\PostulantesController.cs": {
+      "SAA.API.Server.Controllers.PostulantesController": {
+        "System.Void SAA.API.Server.Controllers.PostulantesController::.ctor(SAA.Application.Services.PostulanteService)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      },
+      "SAA.API.Server.Controllers.PostulantesController/<>c": {
+        "System.Boolean SAA.API.Server.Controllers.PostulantesController/<>c::<MiResultado>b__4_0(System.Security.Claims.Claim)": {
+          "Lines": {
+            "43": 0
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 52,
+              "EndOffset": 54,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 16,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 34,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 52,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "SAA.API.Server.Controllers.PostulantesController/<CrearPostulante>d__2": {
+        "System.Void SAA.API.Server.Controllers.PostulantesController/<CrearPostulante>d__2::MoveNext()": {
+          "Lines": {
+            "20": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      },
+      "SAA.API.Server.Controllers.PostulantesController/<MiResultado>d__4": {
+        "System.Void SAA.API.Server.Controllers.PostulantesController/<MiResultado>d__4::MoveNext()": {
+          "Lines": {
+            "42": 0,
+            "44": 0,
+            "46": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": [
+            {
+              "Line": 44,
+              "Offset": 101,
+              "EndOffset": 103,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 44,
+              "Offset": 101,
+              "EndOffset": 130,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 280,
+              "EndOffset": 282,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 280,
+              "EndOffset": 301,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "SAA.API.Server.Controllers.PostulantesController/<ObtenerPostulantes>d__3": {
+        "System.Void SAA.API.Server.Controllers.PostulantesController/<ObtenerPostulantes>d__3::MoveNext()": {
+          "Lines": {
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "SAA.Application.dll": {
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\Services\\AuthService.cs": {
+      "SAA.Application.Services.AuthService": {
+        "System.Void SAA.Application.Services.AuthService::.ctor(SAA.Application.Interfaces.IApplicationDbContext,Microsoft.Extensions.Configuration.IConfiguration)": {
+          "Lines": {
+            "17": 3,
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 3
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.Services.AuthService/<LoginAsync>d__3": {
+        "System.Void SAA.Application.Services.AuthService/<LoginAsync>d__3::MoveNext()": {
+          "Lines": {
+            "24": 3,
+            "25": 3,
+            "26": 3,
+            "28": 3,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "37": 2,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "46": 1,
+            "48": 1,
+            "49": 1,
+            "52": 1,
+            "53": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "62": 1,
+            "63": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "71": 1,
+            "72": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "87": 1,
+            "88": 3
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 327,
+              "EndOffset": 329,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 28,
+              "Offset": 361,
+              "EndOffset": 363,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 384,
+              "EndOffset": 386,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 361,
+              "EndOffset": 414,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 28,
+              "Offset": 384,
+              "EndOffset": 414,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 28,
+              "Offset": 327,
+              "EndOffset": 417,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 422,
+              "EndOffset": 424,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 422,
+              "EndOffset": 456,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 37,
+              "Offset": 481,
+              "EndOffset": 483,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 481,
+              "EndOffset": 515,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 46,
+              "Offset": 528,
+              "EndOffset": 530,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 46,
+              "Offset": 528,
+              "EndOffset": 536,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 1
+            },
+            {
+              "Line": 53,
+              "Offset": 722,
+              "EndOffset": 724,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 722,
+              "EndOffset": 730,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\Services\\MotorAdmisionService.cs": {
+      "SAA.Application.Services.MotorAdmisionService": {
+        "System.Void SAA.Application.Services.MotorAdmisionService::.ctor(SAA.Application.Interfaces.IApplicationDbContext)": {
+          "Lines": {
+            "12": 14,
+            "13": 14,
+            "14": 14,
+            "15": 14
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<>c": {
+        "System.Int32 SAA.Application.Services.MotorAdmisionService/<>c::<ProcesarResultadosAsync>b__3_0(SAA.Domain.Entities.ExamenAdmision)": {
+          "Lines": {
+            "66": 11
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Decimal> SAA.Application.Services.MotorAdmisionService/<>c::<ProcesarResultadosAsync>b__3_4(SAA.Domain.Entities.ExamenAdmision)": {
+          "Lines": {
+            "78": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Application.Services.MotorAdmisionService/<>c::<ObtenerReporteIngresantesAsync>b__4_0(SAA.Domain.Entities.ResultadoAdmision)": {
+          "Lines": {
+            "140": 3
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Application.Services.MotorAdmisionService/<>c::<ObtenerReporteIngresantesAsync>b__4_2(SAA.Application.DTOs.ReporteIngresanteDto)": {
+          "Lines": {
+            "161": 5
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Application.Services.MotorAdmisionService/<>c::<ObtenerReporteTodosAsync>b__5_0(SAA.Domain.Entities.ResultadoAdmision)": {
+          "Lines": {
+            "172": 3
+          },
+          "Branches": []
+        },
+        "System.Decimal SAA.Application.Services.MotorAdmisionService/<>c::<ObtenerReporteTodosAsync>b__5_2(SAA.Application.DTOs.ReporteIngresanteDto)": {
+          "Lines": {
+            "197": 5
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass3_1": {
+        "System.Boolean SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass3_1::<ProcesarResultadosAsync>b__2(SAA.Domain.Entities.FichaPostulacion)": {
+          "Lines": {
+            "76": 13
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass3_2": {
+        "System.Boolean SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass3_2::<ProcesarResultadosAsync>b__3(SAA.Domain.Entities.ExamenAdmision)": {
+          "Lines": {
+            "77": 22
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass4_0": {
+        "SAA.Application.DTOs.ReporteIngresanteDto SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass4_0::<ObtenerReporteIngresantesAsync>b__1(SAA.Domain.Entities.ResultadoAdmision)": {
+          "Lines": {
+            "147": 3,
+            "148": 5,
+            "149": 4,
+            "151": 2,
+            "152": 2,
+            "153": 2,
+            "154": 2,
+            "155": 2,
+            "156": 2,
+            "157": 2,
+            "158": 2,
+            "159": 2,
+            "160": 2
+          },
+          "Branches": [
+            {
+              "Line": 151,
+              "Offset": 69,
+              "EndOffset": 71,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 69,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 81,
+              "EndOffset": 83,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 81,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 97,
+              "EndOffset": 99,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 97,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 109,
+              "EndOffset": 111,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 109,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 125,
+              "EndOffset": 127,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 125,
+              "EndOffset": 130,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 137,
+              "EndOffset": 139,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 137,
+              "EndOffset": 145,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 153,
+              "EndOffset": 155,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 153,
+              "EndOffset": 158,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 2
+            },
+            {
+              "Line": 151,
+              "Offset": 165,
+              "EndOffset": 167,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 165,
+              "EndOffset": 173,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass5_0": {
+        "SAA.Application.DTOs.ReporteIngresanteDto SAA.Application.Services.MotorAdmisionService/<>c__DisplayClass5_0::<ObtenerReporteTodosAsync>b__1(SAA.Domain.Entities.ResultadoAdmision)": {
+          "Lines": {
+            "179": 3,
+            "180": 5,
+            "181": 4,
+            "186": 2,
+            "187": 2,
+            "188": 2,
+            "189": 2,
+            "190": 2,
+            "191": 2,
+            "192": 2,
+            "193": 2,
+            "194": 2,
+            "195": 2,
+            "196": 2
+          },
+          "Branches": [
+            {
+              "Line": 186,
+              "Offset": 69,
+              "EndOffset": 71,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 69,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 81,
+              "EndOffset": 83,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 81,
+              "EndOffset": 89,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 97,
+              "EndOffset": 99,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 97,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 109,
+              "EndOffset": 111,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 109,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 125,
+              "EndOffset": 127,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 125,
+              "EndOffset": 130,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 137,
+              "EndOffset": 139,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 137,
+              "EndOffset": 145,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 153,
+              "EndOffset": 155,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 153,
+              "EndOffset": 158,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 165,
+              "EndOffset": 167,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 165,
+              "EndOffset": 173,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 2
+            },
+            {
+              "Line": 186,
+              "Offset": 269,
+              "EndOffset": 271,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 186,
+              "Offset": 269,
+              "EndOffset": 277,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<ObtenerReporteIngresantesAsync>d__4": {
+        "System.Void SAA.Application.Services.MotorAdmisionService/<ObtenerReporteIngresantesAsync>d__4::MoveNext()": {
+          "Lines": {
+            "133": 3,
+            "134": 3,
+            "135": 3,
+            "136": 3,
+            "138": 5,
+            "141": 1,
+            "142": 1,
+            "143": 1,
+            "145": 1,
+            "150": 1,
+            "163": 1,
+            "164": 3
+          },
+          "Branches": [
+            {
+              "Line": 138,
+              "Offset": 305,
+              "EndOffset": 307,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 138,
+              "Offset": 305,
+              "EndOffset": 318,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<ObtenerReporteTodosAsync>d__5": {
+        "System.Void SAA.Application.Services.MotorAdmisionService/<ObtenerReporteTodosAsync>d__5::MoveNext()": {
+          "Lines": {
+            "167": 3,
+            "168": 3,
+            "170": 5,
+            "173": 1,
+            "174": 1,
+            "175": 1,
+            "177": 1,
+            "182": 1,
+            "183": 1,
+            "184": 1,
+            "185": 1,
+            "199": 1,
+            "200": 3
+          },
+          "Branches": [
+            {
+              "Line": 170,
+              "Offset": 214,
+              "EndOffset": 216,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 170,
+              "Offset": 214,
+              "EndOffset": 227,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<ProcesarResultadosAsync>d__3": {
+        "System.Void SAA.Application.Services.MotorAdmisionService/<ProcesarResultadosAsync>d__3::MoveNext()": {
+          "Lines": {
+            "53": 5,
+            "54": 5,
+            "55": 15,
+            "58": 5,
+            "59": 5,
+            "60": 5,
+            "61": 5,
+            "63": 5,
+            "64": 5,
+            "67": 5,
+            "68": 5,
+            "69": 5,
+            "71": 5,
+            "72": 5,
+            "74": 25,
+            "75": 5,
+            "79": 5,
+            "81": 5,
+            "82": 5,
+            "84": 27,
+            "85": 6,
+            "86": 6,
+            "87": 7,
+            "89": 5,
+            "90": 4,
+            "91": 4,
+            "92": 3,
+            "93": 3,
+            "94": 3,
+            "95": 3,
+            "97": 1,
+            "98": 1,
+            "99": 1,
+            "100": 4,
+            "102": 5,
+            "103": 5,
+            "104": 5,
+            "105": 5,
+            "106": 5,
+            "107": 5,
+            "108": 5,
+            "109": 5,
+            "110": 5,
+            "112": 5,
+            "113": 5,
+            "114": 5,
+            "115": 5,
+            "116": 5,
+            "118": 5,
+            "119": 10,
+            "120": 5,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "127": 5,
+            "128": 10,
+            "129": 5,
+            "130": 5
+          },
+          "Branches": [
+            {
+              "Line": 55,
+              "Offset": 255,
+              "EndOffset": 259,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 5
+            },
+            {
+              "Line": 55,
+              "Offset": 255,
+              "EndOffset": 279,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            },
+            {
+              "Line": 74,
+              "Offset": 2028,
+              "EndOffset": 1331,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 5
+            },
+            {
+              "Line": 84,
+              "Offset": 1953,
+              "EndOffset": 1532,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 6
+            },
+            {
+              "Line": 87,
+              "Offset": 1587,
+              "EndOffset": 1594,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 5
+            },
+            {
+              "Line": 89,
+              "Offset": 1649,
+              "EndOffset": 1651,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 4
+            },
+            {
+              "Line": 91,
+              "Offset": 1689,
+              "EndOffset": 1691,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 3
+            },
+            {
+              "Line": 91,
+              "Offset": 1689,
+              "EndOffset": 1724,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 89,
+              "Offset": 1649,
+              "EndOffset": 1738,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 5
+            },
+            {
+              "Line": 87,
+              "Offset": 1587,
+              "EndOffset": 1942,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 11
+            },
+            {
+              "Line": 84,
+              "Offset": 1953,
+              "EndOffset": 1958,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 5
+            },
+            {
+              "Line": 74,
+              "Offset": 2028,
+              "EndOffset": 2033,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 5
+            },
+            {
+              "Line": 119,
+              "Offset": 2201,
+              "EndOffset": 2203,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 5
+            },
+            {
+              "Line": 119,
+              "Offset": 2201,
+              "EndOffset": 2316,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 5
+            },
+            {
+              "Line": 123,
+              "Offset": 2412,
+              "EndOffset": 2414,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 123,
+              "Offset": 2412,
+              "EndOffset": 2527,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 128,
+              "Offset": 2602,
+              "EndOffset": 2604,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 5
+            },
+            {
+              "Line": 128,
+              "Offset": 2602,
+              "EndOffset": 2713,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 5
+            }
+          ]
+        }
+      },
+      "SAA.Application.Services.MotorAdmisionService/<RegistrarExamenAsync>d__2": {
+        "System.Void SAA.Application.Services.MotorAdmisionService/<RegistrarExamenAsync>d__2::MoveNext()": {
+          "Lines": {
+            "18": 3,
+            "19": 3,
+            "20": 3,
+            "21": 1,
+            "23": 2,
+            "24": 6,
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "37": 2,
+            "38": 2,
+            "39": 4,
+            "40": 2,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "47": 2,
+            "48": 4,
+            "49": 2,
+            "50": 2
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 233,
+              "EndOffset": 235,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 20,
+              "Offset": 233,
+              "EndOffset": 246,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 438,
+              "EndOffset": 442,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 438,
+              "EndOffset": 462,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 39,
+              "Offset": 740,
+              "EndOffset": 742,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 39,
+              "Offset": 740,
+              "EndOffset": 856,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 43,
+              "Offset": 917,
+              "EndOffset": 919,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 917,
+              "EndOffset": 1033,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 1108,
+              "EndOffset": 1110,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            },
+            {
+              "Line": 48,
+              "Offset": 1108,
+              "EndOffset": 1218,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\Services\\PostulanteService.cs": {
+      "SAA.Application.Services.PostulanteService": {
+        "System.Void SAA.Application.Services.PostulanteService::.ctor(SAA.Application.Interfaces.IApplicationDbContext)": {
+          "Lines": {
+            "12": 7,
+            "13": 7,
+            "14": 7,
+            "15": 7
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.Services.PostulanteService/<CrearPostulanteAsync>d__2": {
+        "System.Void SAA.Application.Services.PostulanteService/<CrearPostulanteAsync>d__2::MoveNext()": {
+          "Lines": {
+            "18": 2,
+            "20": 2,
+            "21": 2,
+            "22": 1,
+            "23": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1,
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1,
+            "53": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "67": 1,
+            "68": 1,
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 346,
+              "EndOffset": 348,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 21,
+              "Offset": 346,
+              "EndOffset": 360,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 53,
+              "Offset": 852,
+              "EndOffset": 856,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 53,
+              "Offset": 852,
+              "EndOffset": 876,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "SAA.Application.Services.PostulanteService/<ObtenerMiResultadoAsync>d__4": {
+        "System.Void SAA.Application.Services.PostulanteService/<ObtenerMiResultadoAsync>d__4::MoveNext()": {
+          "Lines": {
+            "96": 3,
+            "97": 3,
+            "98": 4,
+            "100": 2,
+            "101": 2,
+            "103": 2,
+            "104": 2,
+            "105": 2,
+            "106": 2,
+            "107": 2,
+            "108": 2,
+            "109": 2,
+            "110": 2,
+            "111": 2,
+            "112": 3
+          },
+          "Branches": [
+            {
+              "Line": 98,
+              "Offset": 338,
+              "EndOffset": 340,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 98,
+              "Offset": 338,
+              "EndOffset": 347,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 103,
+              "Offset": 940,
+              "EndOffset": 942,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 940,
+              "EndOffset": 946,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 952,
+              "EndOffset": 954,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 952,
+              "EndOffset": 960,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 103,
+              "Offset": 974,
+              "EndOffset": 976,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 974,
+              "EndOffset": 989,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 1017,
+              "EndOffset": 1019,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 1017,
+              "EndOffset": 1023,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 1029,
+              "EndOffset": 1031,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 1029,
+              "EndOffset": 1037,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2
+            },
+            {
+              "Line": 103,
+              "Offset": 1051,
+              "EndOffset": 1053,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 1051,
+              "EndOffset": 1066,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "SAA.Application.Services.PostulanteService/<ObtenerTodosAsync>d__3": {
+        "System.Void SAA.Application.Services.PostulanteService/<ObtenerTodosAsync>d__3::MoveNext()": {
+          "Lines": {
+            "80": 1,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "93": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\DTOs\\AdmisionDTOs.cs": {
+      "SAA.Application.DTOs.RegistrarExamenDto": {
+        "System.Int32 SAA.Application.DTOs.RegistrarExamenDto::get_IdPostulante()": {
+          "Lines": {
+            "5": 6
+          },
+          "Branches": []
+        },
+        "System.Decimal SAA.Application.DTOs.RegistrarExamenDto::get_Puntaje()": {
+          "Lines": {
+            "6": 5
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.RegistrarExamenDto::get_Observaciones()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\DTOs\\AuthDTOs.cs": {
+      "SAA.Application.DTOs.LoginRequestDto": {
+        "System.String SAA.Application.DTOs.LoginRequestDto::get_NombreUsuario()": {
+          "Lines": {
+            "5": 9
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.LoginRequestDto::get_Contrasena()": {
+          "Lines": {
+            "6": 10
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.DTOs.LoginResponseDto": {
+        "System.Boolean SAA.Application.DTOs.LoginResponseDto::get_Exito()": {
+          "Lines": {
+            "11": 6
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.LoginResponseDto::get_Mensaje()": {
+          "Lines": {
+            "12": 8
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.LoginResponseDto::get_Token()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "SAA.Application.DTOs.UsuarioDto SAA.Application.DTOs.LoginResponseDto::get_Usuario()": {
+          "Lines": {
+            "14": 3
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.DTOs.UsuarioDto": {
+        "System.Int32 SAA.Application.DTOs.UsuarioDto::get_IdUsuario()": {
+          "Lines": {
+            "19": 1
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.UsuarioDto::get_NombreUsuario()": {
+          "Lines": {
+            "20": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.UsuarioDto::get_NombreCompleto()": {
+          "Lines": {
+            "21": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.UsuarioDto::get_Correo()": {
+          "Lines": {
+            "22": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.UsuarioDto::get_Rol()": {
+          "Lines": {
+            "23": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\DTOs\\MiResultadoDto.cs": {
+      "SAA.Application.DTOs.MiResultadoDto": {
+        "System.String SAA.Application.DTOs.MiResultadoDto::get_Nombres()": {
+          "Lines": {
+            "5": 5
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.MiResultadoDto::get_Apellidos()": {
+          "Lines": {
+            "6": 4
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.MiResultadoDto::get_Programa()": {
+          "Lines": {
+            "7": 6
+          },
+          "Branches": []
+        },
+        "System.Decimal SAA.Application.DTOs.MiResultadoDto::get_Puntaje()": {
+          "Lines": {
+            "8": 4
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.MiResultadoDto::get_Estado()": {
+          "Lines": {
+            "9": 6
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Application.DTOs.MiResultadoDto::get_Puesto()": {
+          "Lines": {
+            "10": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\DTOs\\PostulanteDTOs.cs": {
+      "SAA.Application.DTOs.CrearPostulanteDto": {
+        "System.String SAA.Application.DTOs.CrearPostulanteDto::get_Nombres()": {
+          "Lines": {
+            "5": 8
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.CrearPostulanteDto::get_Apellidos()": {
+          "Lines": {
+            "6": 6
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.CrearPostulanteDto::get_DNI()": {
+          "Lines": {
+            "7": 10
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.CrearPostulanteDto::get_Correo()": {
+          "Lines": {
+            "8": 6
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.CrearPostulanteDto::get_Contrasena()": {
+          "Lines": {
+            "9": 7
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.CrearPostulanteDto::get_Telefono()": {
+          "Lines": {
+            "10": 1
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Application.DTOs.CrearPostulanteDto::get_IdProgramaInteres()": {
+          "Lines": {
+            "11": 4
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Application.DTOs.PostulanteResponseDto": {
+        "System.Int32 SAA.Application.DTOs.PostulanteResponseDto::get_IdPostulante()": {
+          "Lines": {
+            "16": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.PostulanteResponseDto::get_Nombres()": {
+          "Lines": {
+            "17": 6
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.PostulanteResponseDto::get_Apellidos()": {
+          "Lines": {
+            "18": 6
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.PostulanteResponseDto::get_DNI()": {
+          "Lines": {
+            "19": 8
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.PostulanteResponseDto::get_Correo()": {
+          "Lines": {
+            "20": 6
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.PostulanteResponseDto::get_Telefono()": {
+          "Lines": {
+            "21": 3
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Application.DTOs.PostulanteResponseDto::get_IdProgramaInteres()": {
+          "Lines": {
+            "22": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Application\\DTOs\\ReporteIngresanteDto.cs": {
+      "SAA.Application.DTOs.ReporteIngresanteDto": {
+        "System.String SAA.Application.DTOs.ReporteIngresanteDto::get_DNI()": {
+          "Lines": {
+            "5": 8
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.ReporteIngresanteDto::get_Nombres()": {
+          "Lines": {
+            "6": 12
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.ReporteIngresanteDto::get_Apellidos()": {
+          "Lines": {
+            "7": 8
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.ReporteIngresanteDto::get_ProgramaAcademico()": {
+          "Lines": {
+            "8": 8
+          },
+          "Branches": []
+        },
+        "System.Decimal SAA.Application.DTOs.ReporteIngresanteDto::get_Puntaje()": {
+          "Lines": {
+            "9": 8
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Application.DTOs.ReporteIngresanteDto::get_Puesto()": {
+          "Lines": {
+            "10": 8
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Application.DTOs.ReporteIngresanteDto::get_FechaAdmision()": {
+          "Lines": {
+            "11": 4
+          },
+          "Branches": []
+        },
+        "System.String SAA.Application.DTOs.ReporteIngresanteDto::get_Estado()": {
+          "Lines": {
+            "12": 8
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "SAA.Domain.dll": {
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\ConfiguracionSistema.cs": {
+      "SAA.Domain.Entities.ConfiguracionSistema": {
+        "System.Int32 SAA.Domain.Entities.ConfiguracionSistema::get_IdConfiguracion()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ConfiguracionSistema::get_Clave()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ConfiguracionSistema::get_Valor()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\DocumentoPostulante.cs": {
+      "SAA.Domain.Entities.DocumentoPostulante": {
+        "System.Int32 SAA.Domain.Entities.DocumentoPostulante::get_IdDocumento()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.DocumentoPostulante::get_IdPostulante()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.DocumentoPostulante::get_NombreArchivo()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.DocumentoPostulante::get_Ruta()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.DocumentoPostulante::get_FechaSubida()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\ExamenAdmision.cs": {
+      "SAA.Domain.Entities.ExamenAdmision": {
+        "System.Int32 SAA.Domain.Entities.ExamenAdmision::get_IdExamen()": {
+          "Lines": {
+            "11": 9
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.ExamenAdmision::get_IdFichaPostulacion()": {
+          "Lines": {
+            "16": 1023
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.ExamenAdmision::get_IdPostulante()": {
+          "Lines": {
+            "21": 1026
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ExamenAdmision::get_NombreExamen()": {
+          "Lines": {
+            "26": 2010
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.ExamenAdmision::get_FechaExamen()": {
+          "Lines": {
+            "31": 1003
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.TimeSpan> SAA.Domain.Entities.ExamenAdmision::get_HoraInicio()": {
+          "Lines": {
+            "36": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> SAA.Domain.Entities.ExamenAdmision::get_DuracionMinutos()": {
+          "Lines": {
+            "41": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ExamenAdmision::get_Sala()": {
+          "Lines": {
+            "46": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ExamenAdmision::get_Estado()": {
+          "Lines": {
+            "51": 2010
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Decimal> SAA.Domain.Entities.ExamenAdmision::get_Puntaje()": {
+          "Lines": {
+            "56": 1023
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ExamenAdmision::get_Observaciones()": {
+          "Lines": {
+            "61": 5
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.ExamenAdmision::get_FechaCreacion()": {
+          "Lines": {
+            "66": 2012
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.ExamenAdmision::get_FechaActualizacion()": {
+          "Lines": {
+            "71": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\FichaPostulacion.cs": {
+      "SAA.Domain.Entities.FichaPostulacion": {
+        "System.Int32 SAA.Domain.Entities.FichaPostulacion::get_IdFichaPostulacion()": {
+          "Lines": {
+            "11": 1017
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.FichaPostulacion::get_IdPostulante()": {
+          "Lines": {
+            "16": 2007
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.FichaPostulacion::get_IdProgramaAcademico()": {
+          "Lines": {
+            "21": 1016
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.FichaPostulacion::get_NumeroTramite()": {
+          "Lines": {
+            "26": 2008
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.FichaPostulacion::get_FechaPostulacion()": {
+          "Lines": {
+            "31": 2008
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.FichaPostulacion::get_Estado()": {
+          "Lines": {
+            "36": 2008
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.FichaPostulacion::get_Observaciones()": {
+          "Lines": {
+            "41": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.FichaPostulacion::get_FechaActualizacion()": {
+          "Lines": {
+            "46": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> SAA.Domain.Entities.FichaPostulacion::get_IdUsuarioActualizacion()": {
+          "Lines": {
+            "51": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\LogAuditoria.cs": {
+      "SAA.Domain.Entities.LogAuditoria": {
+        "System.Int32 SAA.Domain.Entities.LogAuditoria::get_IdLog()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.LogAuditoria::get_Usuario()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.LogAuditoria::get_Accion()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.LogAuditoria::get_Fecha()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.LogAuditoria::get_Detalle()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\LogMotorAdmision.cs": {
+      "SAA.Domain.Entities.LogMotorAdmision": {
+        "System.Int32 SAA.Domain.Entities.LogMotorAdmision::get_IdLog()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.LogMotorAdmision::get_Evento()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.LogMotorAdmision::get_Fecha()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.LogMotorAdmision::get_Detalle()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\Matricula.cs": {
+      "SAA.Domain.Entities.Matricula": {
+        "System.Int32 SAA.Domain.Entities.Matricula::get_IdMatricula()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.Matricula::get_IdPostulante()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.Matricula::get_IdProgramaAcademico()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.Matricula::get_FechaMatricula()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Decimal> SAA.Domain.Entities.Matricula::get_MontoPagado()": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\Notificacion.cs": {
+      "SAA.Domain.Entities.Notificacion": {
+        "System.Int32 SAA.Domain.Entities.Notificacion::get_IdNotificacion()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.Notificacion::get_IdPostulante()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Notificacion::get_Mensaje()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.Notificacion::get_FechaEnvio()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": []
+        },
+        "System.Boolean SAA.Domain.Entities.Notificacion::get_Leido()": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\PeriodoAdmision.cs": {
+      "SAA.Domain.Entities.PeriodoAdmision": {
+        "System.Int32 SAA.Domain.Entities.PeriodoAdmision::get_IdPeriodo()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.PeriodoAdmision::get_Nombre()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.PeriodoAdmision::get_FechaInicio()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.PeriodoAdmision::get_FechaFin()": {
+          "Lines": {
+            "8": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\Postulante.cs": {
+      "SAA.Domain.Entities.Postulante": {
+        "System.Int32 SAA.Domain.Entities.Postulante::get_IdPostulante()": {
+          "Lines": {
+            "11": 1030
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Postulante::get_Nombres()": {
+          "Lines": {
+            "16": 2040
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Postulante::get_Apellidos()": {
+          "Lines": {
+            "21": 2036
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Postulante::get_DNI()": {
+          "Lines": {
+            "26": 3043
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.Postulante::get_IdProgramaInteres()": {
+          "Lines": {
+            "31": 2018
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Postulante::get_Correo()": {
+          "Lines": {
+            "36": 3022
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Postulante::get_Telefono()": {
+          "Lines": {
+            "41": 1004
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Postulante::get_Direccion()": {
+          "Lines": {
+            "46": 1002
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.Postulante::get_FechaNacimiento()": {
+          "Lines": {
+            "51": 1002
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Postulante::get_Estado()": {
+          "Lines": {
+            "56": 2022
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.Postulante::get_FechaCreacion()": {
+          "Lines": {
+            "61": 2021
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.Postulante::get_FechaActualizacion()": {
+          "Lines": {
+            "66": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\ProgramaAcademico.cs": {
+      "SAA.Domain.Entities.ProgramaAcademico": {
+        "System.Int32 SAA.Domain.Entities.ProgramaAcademico::get_IdProgramaAcademico()": {
+          "Lines": {
+            "11": 1028
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ProgramaAcademico::get_Codigo()": {
+          "Lines": {
+            "16": 28
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ProgramaAcademico::get_Nombre()": {
+          "Lines": {
+            "21": 43
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ProgramaAcademico::get_Descripcion()": {
+          "Lines": {
+            "26": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ProgramaAcademico::get_NivelAcademico()": {
+          "Lines": {
+            "31": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> SAA.Domain.Entities.ProgramaAcademico::get_Vacantes()": {
+          "Lines": {
+            "36": 23
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.ProgramaAcademico::get_FechaInicioProceso()": {
+          "Lines": {
+            "41": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.ProgramaAcademico::get_FechaFinalProceso()": {
+          "Lines": {
+            "46": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ProgramaAcademico::get_Estado()": {
+          "Lines": {
+            "51": 28
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ProgramaAcademico::get_Departamento()": {
+          "Lines": {
+            "56": 8
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.ProgramaAcademico::get_FechaCreacion()": {
+          "Lines": {
+            "61": 22
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.ProgramaAcademico::get_FechaActualizacion()": {
+          "Lines": {
+            "66": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\ResultadoAdmision.cs": {
+      "SAA.Domain.Entities.ResultadoAdmision": {
+        "System.Int32 SAA.Domain.Entities.ResultadoAdmision::get_IdResultado()": {
+          "Lines": {
+            "11": 8
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.ResultadoAdmision::get_IdFichaPostulacion()": {
+          "Lines": {
+            "16": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.ResultadoAdmision::get_IdPostulante()": {
+          "Lines": {
+            "21": 23
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.ResultadoAdmision::get_IdProgramaAcademico()": {
+          "Lines": {
+            "26": 18
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Decimal> SAA.Domain.Entities.ResultadoAdmision::get_Calificacion()": {
+          "Lines": {
+            "31": 18
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ResultadoAdmision::get_Resultado()": {
+          "Lines": {
+            "36": 33
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> SAA.Domain.Entities.ResultadoAdmision::get_OrdenMerito()": {
+          "Lines": {
+            "41": 16
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.ResultadoAdmision::get_Observaciones()": {
+          "Lines": {
+            "46": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.ResultadoAdmision::get_FechaResultado()": {
+          "Lines": {
+            "51": 28
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> SAA.Domain.Entities.ResultadoAdmision::get_IdUsuarioEvaluador()": {
+          "Lines": {
+            "56": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.ResultadoAdmision::get_FechaActualizacion()": {
+          "Lines": {
+            "61": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\Rol.cs": {
+      "SAA.Domain.Entities.Rol": {
+        "System.Int32 SAA.Domain.Entities.Rol::get_IdRol()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Rol::get_Nombre()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Rol::get_Descripcion()": {
+          "Lines": {
+            "7": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\Sesion.cs": {
+      "SAA.Domain.Entities.Sesion": {
+        "System.Int32 SAA.Domain.Entities.Sesion::get_IdSesion()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 SAA.Domain.Entities.Sesion::get_IdUsuario()": {
+          "Lines": {
+            "6": 2
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.Sesion::get_FechaInicio()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.Sesion::get_FechaFin()": {
+          "Lines": {
+            "8": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Sesion::get_Token()": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\TipoDocumento.cs": {
+      "SAA.Domain.Entities.TipoDocumento": {
+        "System.Int32 SAA.Domain.Entities.TipoDocumento::get_IdTipoDocumento()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.TipoDocumento::get_Nombre()": {
+          "Lines": {
+            "6": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\Entities\\Usuario.cs": {
+      "SAA.Domain.Entities.Usuario": {
+        "System.Int32 SAA.Domain.Entities.Usuario::get_IdUsuario()": {
+          "Lines": {
+            "11": 8
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Usuario::get_NombreUsuario()": {
+          "Lines": {
+            "16": 2018
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Usuario::get_Contrasena()": {
+          "Lines": {
+            "21": 2019
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Usuario::get_NombreCompleto()": {
+          "Lines": {
+            "26": 2012
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Usuario::get_Correo()": {
+          "Lines": {
+            "31": 2012
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Usuario::get_Rol()": {
+          "Lines": {
+            "36": 2014
+          },
+          "Branches": []
+        },
+        "System.String SAA.Domain.Entities.Usuario::get_Estado()": {
+          "Lines": {
+            "41": 2017
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.Usuario::get_UltimoAcceso()": {
+          "Lines": {
+            "46": 3
+          },
+          "Branches": []
+        },
+        "System.DateTime SAA.Domain.Entities.Usuario::get_FechaCreacion()": {
+          "Lines": {
+            "51": 2011
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.DateTime> SAA.Domain.Entities.Usuario::get_FechaActualizacion()": {
+          "Lines": {
+            "56": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "SAA.Infrastructure.dll": {
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Infrastructure\\Services\\SeedDataService.cs": {
+      "SAA.Infrastructure.Services.SeedDataService": {
+        "System.Void SAA.Infrastructure.Services.SeedDataService::.ctor(SAA.Infrastructure.Data.SAADbContext)": {
+          "Lines": {
+            "13": 3,
+            "14": 3,
+            "15": 3,
+            "16": 3
+          },
+          "Branches": []
+        }
+      },
+      "SAA.Infrastructure.Services.SeedDataService/<SeedAsync>d__2": {
+        "System.Void SAA.Infrastructure.Services.SeedDataService/<SeedAsync>d__2::MoveNext()": {
+          "Lines": {
+            "22": 3,
+            "24": 3,
+            "26": 3,
+            "29": 3,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "42": 2,
+            "43": 2,
+            "44": 2,
+            "47": 3,
+            "48": 2,
+            "49": 2,
+            "50": 2,
+            "51": 2,
+            "52": 2,
+            "53": 2,
+            "54": 2,
+            "55": 2,
+            "56": 2,
+            "57": 2,
+            "59": 1,
+            "61": 1,
+            "62": 1,
+            "63": 9,
+            "64": 3,
+            "65": 3,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 3,
+            "74": 1,
+            "75": 1,
+            "77": 3,
+            "78": 3,
+            "81": 3,
+            "82": 3,
+            "84": 3,
+            "85": 2,
+            "86": 2,
+            "87": 2,
+            "88": 2,
+            "89": 2,
+            "91": 2002,
+            "92": 999,
+            "93": 999,
+            "94": 999,
+            "96": 999,
+            "97": 999,
+            "98": 999,
+            "99": 999,
+            "100": 999,
+            "101": 999,
+            "102": 999,
+            "103": 999,
+            "104": 999,
+            "105": 999,
+            "106": 999,
+            "107": 999,
+            "108": 999,
+            "109": 999,
+            "112": 999,
+            "113": 999,
+            "114": 999,
+            "115": 999,
+            "116": 999,
+            "117": 999,
+            "118": 999,
+            "119": 999,
+            "120": 999,
+            "121": 999,
+            "122": 999,
+            "124": 2,
+            "125": 2,
+            "126": 2,
+            "129": 2002,
+            "130": 999,
+            "131": 999,
+            "132": 999,
+            "133": 999,
+            "134": 999,
+            "135": 999,
+            "136": 999,
+            "137": 999,
+            "138": 999,
+            "139": 999,
+            "140": 999,
+            "141": 999,
+            "142": 2,
+            "143": 2,
+            "145": 2002,
+            "146": 999,
+            "147": 999,
+            "149": 999,
+            "151": 999,
+            "152": 999,
+            "153": 999,
+            "154": 999,
+            "155": 999,
+            "156": 999,
+            "157": 999,
+            "158": 999,
+            "159": 999,
+            "160": 999,
+            "161": 999,
+            "162": 999,
+            "163": 2,
+            "164": 2,
+            "165": 2,
+            "166": 3,
+            "167": 0,
+            "168": 0,
+            "169": 0,
+            "170": 0,
+            "172": 3
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 319,
+              "EndOffset": 324,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 29,
+              "Offset": 319,
+              "EndOffset": 574,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 47,
+              "Offset": 602,
+              "EndOffset": 607,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 47,
+              "Offset": 602,
+              "EndOffset": 1000,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 63,
+              "Offset": 1336,
+              "EndOffset": 1058,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 3
+            },
+            {
+              "Line": 65,
+              "Offset": 1096,
+              "EndOffset": 1098,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            },
+            {
+              "Line": 65,
+              "Offset": 1096,
+              "EndOffset": 1135,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 1140,
+              "EndOffset": 1145,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 1171,
+              "EndOffset": 1173,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 1171,
+              "EndOffset": 1194,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 1219,
+              "EndOffset": 1221,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 1219,
+              "EndOffset": 1242,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 1267,
+              "EndOffset": 1269,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 69,
+              "Offset": 1267,
+              "EndOffset": 1290,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 1140,
+              "EndOffset": 1317,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 3
+            },
+            {
+              "Line": 63,
+              "Offset": 1336,
+              "EndOffset": 1341,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 1
+            },
+            {
+              "Line": 74,
+              "Offset": 1388,
+              "EndOffset": 1390,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 1388,
+              "EndOffset": 1508,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 1
+            },
+            {
+              "Line": 84,
+              "Offset": 1611,
+              "EndOffset": 1613,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 2
+            },
+            {
+              "Line": 84,
+              "Offset": 1611,
+              "EndOffset": 1629,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 1
+            },
+            {
+              "Line": 84,
+              "Offset": 1634,
+              "EndOffset": 1639,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 2
+            },
+            {
+              "Line": 91,
+              "Offset": 2327,
+              "EndOffset": 1696,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 999
+            },
+            {
+              "Line": 91,
+              "Offset": 2327,
+              "EndOffset": 2332,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 2
+            },
+            {
+              "Line": 129,
+              "Offset": 2715,
+              "EndOffset": 2518,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 999
+            },
+            {
+              "Line": 129,
+              "Offset": 2715,
+              "EndOffset": 2720,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 2
+            },
+            {
+              "Line": 145,
+              "Offset": 3127,
+              "EndOffset": 2878,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 999
+            },
+            {
+              "Line": 145,
+              "Offset": 3127,
+              "EndOffset": 3132,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 2
+            },
+            {
+              "Line": 84,
+              "Offset": 1634,
+              "EndOffset": 3307,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Infrastructure\\Data\\SAADbContext.cs": {
+      "SAA.Infrastructure.Data.SAADbContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.Usuario> SAA.Infrastructure.Data.SAADbContext::get_Usuarios()": {
+          "Lines": {
+            "15": 73
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.Rol> SAA.Infrastructure.Data.SAADbContext::get_Roles()": {
+          "Lines": {
+            "16": 56
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.Postulante> SAA.Infrastructure.Data.SAADbContext::get_Postulantes()": {
+          "Lines": {
+            "19": 94
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.FichaPostulacion> SAA.Infrastructure.Data.SAADbContext::get_FichasPostulacion()": {
+          "Lines": {
+            "20": 70
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.ExamenAdmision> SAA.Infrastructure.Data.SAADbContext::get_ExamenesAdmision()": {
+          "Lines": {
+            "21": 73
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.ResultadoAdmision> SAA.Infrastructure.Data.SAADbContext::get_ResultadosAdmision()": {
+          "Lines": {
+            "22": 90
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.ProgramaAcademico> SAA.Infrastructure.Data.SAADbContext::get_ProgramasAcademicos()": {
+          "Lines": {
+            "25": 84
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<SAA.Domain.Entities.PeriodoAdmision> SAA.Infrastructure.Data.SAADbContext::get_PeriodosAdmision()": {
+          "Lines": {
+            "26": 56
+          },
+          "Branches": []
+        },
+        "System.Void SAA.Infrastructure.Data.SAADbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "29": 3,
+            "30": 3,
+            "33": 6,
+            "34": 3,
+            "35": 6,
+            "37": 3,
+            "40": 6,
+            "41": 3,
+            "42": 6,
+            "44": 6,
+            "45": 3,
+            "46": 6,
+            "48": 6,
+            "49": 3,
+            "50": 3,
+            "51": 6,
+            "53": 6,
+            "54": 3,
+            "55": 3,
+            "56": 6,
+            "59": 6,
+            "60": 3,
+            "61": 6,
+            "63": 3,
+            "64": 3
+          },
+          "Branches": []
+        },
+        "System.Void SAA.Infrastructure.Data.SAADbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<SAA.Infrastructure.Data.SAADbContext>)": {
+          "Lines": {
+            "10": 28,
+            "11": 28,
+            "12": 28
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

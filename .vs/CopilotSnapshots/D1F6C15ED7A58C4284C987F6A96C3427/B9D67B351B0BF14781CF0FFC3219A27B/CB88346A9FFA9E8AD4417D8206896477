@@ -1,0 +1,315 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SAA.Application.DTOs;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+using SAA.Infrastructure.Data;
+using SAA.Infrastructure.Repositories;
+using SAA.Infrastructure.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add service defaults & Aspire client integrations.
+builder.AddServiceDefaults();
+
+// Add services to the container.
+builder.Services.AddProblemDetails();
+
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+
+// Agregar servicios para Swagger/OpenAPI
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "SAA - Sistema Automatizado de Admisión", Version = "v1" });
+});
+
+// Obtener connection string desde configuración
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? "Server=.;Database=SAA;Trusted_Connection=true;";
+
+// Registrar SAADbContext con EF Core
+builder.Services.AddDbContext<SAADbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+// Registrar servicios
+builder.Services.AddScoped<SeedDataService>();
+
+// Registrar Unit of Work
+builder.Services.AddScoped<IUnitOfWork>(sp => new UnitOfWork(connectionString));
+
+// Registrar repositorios individuales (opcionales si se necesita acceso directo sin Unit of Work)
+builder.Services.AddScoped<IPostulanteRepository>(sp => new PostulanteRepository(connectionString));
+builder.Services.AddScoped<IFichaPostulacionRepository>(sp => new FichaPostulacionRepository(connectionString));
+builder.Services.AddScoped<IExamenRepository>(sp => new ExamenRepository(connectionString));
+builder.Services.AddScoped<IResultadoRepository>(sp => new ResultadoRepository(connectionString));
+builder.Services.AddScoped<IUsuarioRepository>(sp => new UsuarioRepository(connectionString));
+builder.Services.AddScoped<IProgramaAcademicoRepository>(sp => new ProgramaAcademicoRepository(connectionString));
+
+// Servicio en memoria para mantener sesiones durante desarrollo
+var usuarioActualPorSesion = new Dictionary<string, UsuarioDto>();
+
+var app = builder.Build();
+
+// Sembrar datos iniciales
+using (var scope = app.Services.CreateScope())
+{
+    var seedDataService = scope.ServiceProvider.GetRequiredService<SeedDataService>();
+    await seedDataService.SeedAsync();
+}
+
+// Configure the HTTP request pipeline.
+app.UseExceptionHandler();
+
+// Registrar Swagger y SwaggerUI (disponible en cualquier entorno)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SAA API v1");
+    c.RoutePrefix = string.Empty; // Abre Swagger en la raíz http://localhost:5000
+});
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+
+string[] summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+
+// Endpoint de health check
+app.MapGet("/health", () => "SAA API funcionando correctamente")
+    .WithName("Health");
+
+var api = app.MapGroup("/api");
+
+#region Endpoints de Autenticación
+
+// POST /api/auth/login
+api.MapPost("auth/login", async ([FromBody] LoginRequest request, [FromServices] SAADbContext db) =>
+{
+    if (string.IsNullOrWhiteSpace(request.NombreUsuario) || string.IsNullOrWhiteSpace(request.Contrasena))
+    {
+        return Results.BadRequest(new LoginResponse
+        {
+            Exito = false,
+            Mensaje = "Usuario y contraseña son requeridos"
+        });
+    }
+
+    // Buscar usuario en la base de datos
+    var usuario = await db.Usuarios
+        .FirstOrDefaultAsync(u => u.NombreUsuario == request.NombreUsuario);
+
+    if (usuario == null || usuario.Contrasena != request.Contrasena)
+    {
+        return Results.Unauthorized(new LoginResponse
+        {
+            Exito = false,
+            Mensaje = "Usuario o contraseña incorrectos"
+        });
+    }
+
+    if (usuario.Estado != "Activo")
+    {
+        return Results.Forbid(new LoginResponse
+        {
+            Exito = false,
+            Mensaje = "Usuario inactivo"
+        });
+    }
+
+    // Crear DTO del usuario
+    var usuarioDto = new UsuarioDto
+    {
+        IdUsuario = usuario.IdUsuario,
+        NombreUsuario = usuario.NombreUsuario,
+        NombreCompleto = usuario.NombreCompleto,
+        Correo = usuario.Correo,
+        Rol = usuario.Rol,
+        Estado = usuario.Estado
+    };
+
+    // Generar token simple (en desarrollo)
+    var token = Guid.NewGuid().ToString();
+    usuarioActualPorSesion[token] = usuarioDto;
+
+    // Actualizar último acceso
+    usuario.UltimoAcceso = DateTime.Now;
+    db.Usuarios.Update(usuario);
+    await db.SaveChangesAsync();
+
+    return Results.Ok(new LoginResponse
+    {
+        Exito = true,
+        Mensaje = "Autenticación exitosa",
+        Usuario = usuarioDto,
+        Token = token
+    });
+}).WithName("Login").WithOpenApi();
+
+#endregion
+
+#region Endpoints de Registro de Ingreso
+
+// POST /api/ingreso/registrar - Registrar ingreso de un postulante
+api.MapPost("ingreso/registrar", async ([FromBody] RegistroIngresoRequest request, [FromHeader] string? authorization, [FromServices] SAADbContext db) =>
+{
+    // Validar autenticación
+    if (string.IsNullOrWhiteSpace(authorization))
+    {
+        return Results.Unauthorized(new RegistroIngresoResponse
+        {
+            Exito = false,
+            Mensaje = "Token de autenticación requerido"
+        });
+    }
+
+    if (!usuarioActualPorSesion.TryGetValue(authorization, out var usuarioActual))
+    {
+        return Results.Unauthorized(new RegistroIngresoResponse
+        {
+            Exito = false,
+            Mensaje = "Token inválido o expirado"
+        });
+    }
+
+    if (string.IsNullOrWhiteSpace(request.NombrePostulante))
+    {
+        return Results.BadRequest(new RegistroIngresoResponse
+        {
+            Exito = false,
+            Mensaje = "Nombre del postulante es requerido"
+        });
+    }
+
+    // Buscar el postulante por nombre
+    var postulante = await db.Postulantes
+        .FirstOrDefaultAsync(p => p.NombreCompleto == request.NombrePostulante);
+
+    if (postulante == null)
+    {
+        return Results.NotFound(new RegistroIngresoResponse
+        {
+            Exito = false,
+            Mensaje = $"No se encontró postulante con nombre '{request.NombrePostulante}'"
+        });
+    }
+
+    // Crear registro de ingreso
+    var registroIngreso = new RegistroIngreso
+    {
+        IdPostulante = postulante.IdPostulante,
+        NombrePostulante = postulante.NombreCompleto,
+        FechaHoraIngreso = DateTime.Now,
+        UsuarioRegistro = usuarioActual.NombreUsuario,
+        Observaciones = request.Observaciones
+    };
+
+    db.RegistrosIngreso.Add(registroIngreso);
+    await db.SaveChangesAsync();
+
+    var registroDto = new RegistroIngresoDto
+    {
+        IdRegistroIngreso = registroIngreso.IdRegistroIngreso,
+        IdPostulante = registroIngreso.IdPostulante,
+        NombrePostulante = registroIngreso.NombrePostulante,
+        FechaHoraIngreso = registroIngreso.FechaHoraIngreso,
+        UsuarioRegistro = registroIngreso.UsuarioRegistro,
+        Observaciones = registroIngreso.Observaciones
+    };
+
+    return Results.Ok(new RegistroIngresoResponse
+    {
+        Exito = true,
+        Mensaje = "Ingreso registrado exitosamente",
+        Registro = registroDto
+    });
+}).WithName("RegistrarIngreso").WithOpenApi();
+
+// GET /api/ingreso/reporte - Ver reporte de ingresos (solo administradores)
+api.MapGet("ingreso/reporte", async ([FromHeader] string? authorization, [FromServices] SAADbContext db) =>
+{
+    // Validar autenticación
+    if (string.IsNullOrWhiteSpace(authorization))
+    {
+        return Results.Unauthorized(new ReporteIngresoDto
+        {
+            TotalIngresos = 0,
+            Registros = new()
+        });
+    }
+
+    if (!usuarioActualPorSesion.TryGetValue(authorization, out var usuarioActual))
+    {
+        return Results.Unauthorized(new ReporteIngresoDto
+        {
+            TotalIngresos = 0,
+            Registros = new()
+        });
+    }
+
+    // Validar que sea administrador
+    if (usuarioActual.Rol != "Administrador")
+    {
+        return Results.Forbid(new ReporteIngresoDto
+        {
+            TotalIngresos = 0,
+            Registros = new()
+        });
+    }
+
+    // Obtener todos los registros de ingreso
+    var registros = await db.RegistrosIngreso
+        .OrderByDescending(r => r.FechaHoraIngreso)
+        .Select(r => new RegistroIngresoDto
+        {
+            IdRegistroIngreso = r.IdRegistroIngreso,
+            IdPostulante = r.IdPostulante,
+            NombrePostulante = r.NombrePostulante,
+            FechaHoraIngreso = r.FechaHoraIngreso,
+            UsuarioRegistro = r.UsuarioRegistro,
+            Observaciones = r.Observaciones
+        })
+        .ToListAsync();
+
+    var reporte = new ReporteIngresoDto
+    {
+        TotalIngresos = registros.Count,
+        Registros = registros
+    };
+
+    return Results.Ok(reporte);
+}).WithName("ReporteIngresos").WithOpenApi();
+
+#endregion
+
+api.MapGet("weatherforecast", () =>
+{
+    var forecast = Enumerable.Range(1, 5).Select(index =>
+        new WeatherForecast(
+            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+            Random.Shared.Next(-20, 55),
+            summaries[Random.Shared.Next(summaries.Length)]
+        ))
+        .ToArray();
+    return forecast;
+})
+.WithName("GetWeatherForecast");
+
+// Endpoint para verificar conexión a la base de datos
+api.MapGet("dbping", async ([FromServices] SAADbContext db) =>
+{
+    var canConnect = await db.Database.CanConnectAsync();
+    return Results.Ok(new { canConnect });
+}).WithName("DbPing");
+
+app.MapDefaultEndpoints();
+
+app.UseFileServer();
+
+app.Run();
+
+record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}

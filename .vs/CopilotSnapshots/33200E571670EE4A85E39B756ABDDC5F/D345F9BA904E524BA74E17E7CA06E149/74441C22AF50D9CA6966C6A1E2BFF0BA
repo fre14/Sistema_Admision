@@ -1,0 +1,44 @@
+﻿using System.Data;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Resultados de Admisión
+/// </summary>
+public class ResultadoRepository : Repository<ResultadoAdmision>, IResultadoRepository
+{
+    protected override string TableName => "ResultadosAdmision";
+
+    public ResultadoRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Obtiene los resultados de un postulante
+    /// </summary>
+    public async Task<IEnumerable<ResultadoAdmision>> GetByPostulanteIdAsync(int idPostulante)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdPostulante = @IdPostulante";
+            return await connection.QueryAsync<ResultadoAdmision>(query, new { IdPostulante = idPostulante });
+        }
+    }
+
+    /// <summary>
+    /// Obtiene los resultados aprobados de un programa académico
+    /// </summary>
+    public async Task<IEnumerable<ResultadoAdmision>> GetAprobadosByProgramaIdAsync(int idPrograma)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdProgramaAcademico = @IdProgramaAcademico AND Resultado = @Resultado";
+            return await connection.QueryAsync<ResultadoAdmision>(query, new { IdProgramaAcademico = idPrograma, Resultado = "Aprobado" });
+        }
+    }
+}

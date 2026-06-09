@@ -1,0 +1,54 @@
+﻿namespace SAA.Domain.Interfaces;
+
+/// <summary>
+/// Interface para el patrón Unit of Work que agrupa todos los repositorios
+/// bajo una sola transacción ACID
+/// </summary>
+public interface IUnitOfWork : IDisposable, IAsyncDisposable
+{
+    /// <summary>
+    /// Repositorio de Postulantes
+    /// </summary>
+    IPostulanteRepository PostulanteRepository { get; }
+
+    /// <summary>
+    /// Repositorio de Fichas de Postulación
+    /// </summary>
+    IFichaPostulacionRepository FichaPostulacionRepository { get; }
+
+    /// <summary>
+    /// Repositorio de Exámenes de Admisión
+    /// </summary>
+    IExamenRepository ExamenRepository { get; }
+
+    /// <summary>
+    /// Repositorio de Resultados de Admisión
+    /// </summary>
+    IResultadoRepository ResultadoRepository { get; }
+
+    /// <summary>
+    /// Repositorio de Usuarios
+    /// </summary>
+    IUsuarioRepository UsuarioRepository { get; }
+
+    /// <summary>
+    /// Repositorio de Programas Académicos
+    /// </summary>
+    IProgramaAcademicoRepository ProgramaAcademicoRepository { get; }
+
+    /// <summary>
+    /// Inicia una transacción
+    /// </summary>
+    /// <returns>La transacción iniciada</returns>
+    Task<IDbTransaction> BeginTransactionAsync();
+
+    /// <summary>
+    /// Confirma los cambios en la base de datos (Commit)
+    /// </summary>
+    Task<int> SaveChangesAsync();
+
+    /// <summary>
+    /// Revierte los cambios en la base de datos (Rollback)
+    /// </summary>
+    Task RollbackAsync();
+}

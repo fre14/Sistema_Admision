@@ -1,0 +1,106 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Exámenes de Admisión
+/// </summary>
+public class ExamenRepository : Repository<ExamenAdmision>, IExamenRepository
+{
+    protected override string TableName => "ExamenesAdmision";
+
+    public ExamenRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Obtiene los exámenes asignados a un postulante
+    /// </summary>
+    public async Task<IEnumerable<ExamenAdmision>> GetByPostulanteIdAsync(int idPostulante)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdPostulante = @IdPostulante";
+            return await connection.QueryAsync<ExamenAdmision>(query, new { IdPostulante = idPostulante });
+        }
+    }
+
+    /// <summary>
+    /// Obtiene los exámenes pendientes de un postulante
+    /// </summary>
+    public async Task<IEnumerable<ExamenAdmision>> GetPendientesByPostulanteIdAsync(int idPostulante)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdPostulante = @IdPostulante AND Estado = @Estado";
+            return await connection.QueryAsync<ExamenAdmision>(query, new { IdPostulante = idPostulante, Estado = "Pendiente" });
+        }
+    }
+
+    /// <summary>
+    /// Registra un examen llamando al stored procedure Admision.SP_RegistrarExamen
+    /// </summary>
+    public async Task<int> RegistrarExamenAsync(ExamenAdmision examen)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            using var transaction = connection.BeginTransaction();
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@IdFichaPostulacion", examen.IdFichaPostulacion);
+                parameters.Add("@IdPostulante", examen.IdPostulante);
+                parameters.Add("@NombreExamen", examen.NombreExamen);
+                parameters.Add("@FechaExamen", examen.FechaExamen);
+                parameters.Add("@HoraInicio", examen.HoraInicio);
+                parameters.Add("@DuracionMinutos", examen.DuracionMinutos);
+                parameters.Add("@Sala", examen.Sala);
+                parameters.Add("@Estado", examen.Estado);
+                parameters.Add("@NewId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                await connection.ExecuteAsync("Admision.SP_RegistrarExamen", parameters, commandType: CommandType.StoredProcedure, transaction: transaction);
+                var newId = parameters.Get<int>("@NewId");
+                transaction.Commit();
+                return newId;
+            }
+            catch (SqlException)
+            {
+                try { transaction.Rollback(); } catch { }
+                throw;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Confirma un examen y ejecuta clasificación automática
+    /// </summary>
+    public async Task<bool> ConfirmarExamenYClasificarAsync(int idExamen)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            using var transaction = connection.BeginTransaction();
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@IdExamen", idExamen);
+
+                await connection.ExecuteAsync("Admision.SP_ConfirmarExamenYClasificar", parameters, commandType: CommandType.StoredProcedure, transaction: transaction);
+                transaction.Commit();
+                return true;
+            }
+            catch (SqlException)
+            {
+                try { transaction.Rollback(); } catch { }
+                throw;
+            }
+        }
+    }
+}

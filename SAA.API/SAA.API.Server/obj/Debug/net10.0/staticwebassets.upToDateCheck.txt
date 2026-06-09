@@ -1,0 +1,4 @@
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.API\SAA.API.Server\wwwroot\index.html
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.API\SAA.API.Server\wwwroot\index.css
+wwwroot\index.css
+wwwroot\index.html

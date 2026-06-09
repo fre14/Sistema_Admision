@@ -1,0 +1,99 @@
+@baseUrl = http://localhost:5000/api
+
+### 1. LOGIN - Autenticarse con credenciales
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "nombreUsuario": "fredy",
+  "contrasena": "123456"
+}
+
+###
+
+### 2. REGISTRAR INGRESO - Juan Pérez García
+POST {{baseUrl}}/ingreso/registrar
+Content-Type: application/json
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+{
+  "nombrePostulante": "Juan Pérez García",
+  "observaciones": "Ingresó a las 8:30 AM"
+}
+
+###
+
+### 3. REGISTRAR INGRESO - María López Martínez
+POST {{baseUrl}}/ingreso/registrar
+Content-Type: application/json
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+{
+  "nombrePostulante": "María López Martínez",
+  "observaciones": "Llegó puntual"
+}
+
+###
+
+### 4. REGISTRAR INGRESO - Carlos Rodríguez Hernández
+POST {{baseUrl}}/ingreso/registrar
+Content-Type: application/json
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+{
+  "nombrePostulante": "Carlos Rodríguez Hernández",
+  "observaciones": "Asistencia confirmada"
+}
+
+###
+
+### 5. REGISTRAR INGRESO - Ana González Díaz
+POST {{baseUrl}}/ingreso/registrar
+Content-Type: application/json
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+{
+  "nombrePostulante": "Ana González Díaz",
+  "observaciones": ""
+}
+
+###
+
+### 6. REGISTRAR INGRESO - Pedro Sánchez Flores
+POST {{baseUrl}}/ingreso/registrar
+Content-Type: application/json
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+{
+  "nombrePostulante": "Pedro Sánchez Flores",
+  "observaciones": "Requiere acomodaciones especiales"
+}
+
+###
+
+### 7. VER REPORTE COMPLETO
+GET {{baseUrl}}/ingreso/reporte
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+###
+
+### 8. EXPORTAR REPORTE EN PDF (Descargar)
+GET {{baseUrl}}/ingreso/exportar/pdf
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+###
+
+### 9. EXPORTAR REPORTE EN CSV (Descargar)
+GET {{baseUrl}}/ingreso/exportar/csv
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+###
+
+### 10. EXPORTAR REPORTE EN TXT (Descargar)
+GET {{baseUrl}}/ingreso/exportar/txt
+Authorization: {REEMPLAZAR_CON_TOKEN}
+
+###
+
+### 11. VERIFICAR CONEXIÓN A BD
+GET {{baseUrl}}/dbping

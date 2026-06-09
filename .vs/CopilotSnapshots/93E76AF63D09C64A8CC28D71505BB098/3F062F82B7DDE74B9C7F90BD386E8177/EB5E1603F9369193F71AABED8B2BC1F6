@@ -1,0 +1,19 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning",
+      "Aspire.Hosting.Dcp": "Warning",
+
+
+      
+        "ConnectionStrings": {
+          "DefaultConnection": "Server=DESKTOP-L5RMLNQ;Database=SAA_AdmisionDB;Trusted_Connection=True;TrustServerCertificate=True;"
+        }
+      }
+      
+    
+   }
+
+  }
+ 

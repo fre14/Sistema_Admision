@@ -1,0 +1,84 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Postulantes
+/// </summary>
+public class PostulanteRepository : Repository<Postulante>, IPostulanteRepository
+{
+    protected override string TableName => "Postulantes";
+
+    public PostulanteRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Busca postulantes por número de documento
+    /// </summary>
+    public async Task<Postulante?> GetByNumeroDocumentoAsync(string numeroDocumento)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE NumeroDocumento = @NumeroDocumento";
+            return await connection.QueryFirstOrDefaultAsync<Postulante>(query, new { NumeroDocumento = numeroDocumento });
+        }
+    }
+
+    /// <summary>
+    /// Busca postulantes por correo electrónico
+    /// </summary>
+    public async Task<Postulante?> GetByCorreoAsync(string correo)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE Correo = @Correo";
+            return await connection.QueryFirstOrDefaultAsync<Postulante>(query, new { Correo = correo });
+        }
+    }
+
+    /// <summary>
+    /// Registra un postulante llamando al stored procedure Admision.SP_RegistrarPostulante
+    /// </summary>
+    public async Task<int> RegistrarPostulanteAsync(Postulante postulante)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            using var transaction = connection.BeginTransaction();
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@NombreCompleto", postulante.NombreCompleto);
+                parameters.Add("@NumeroDocumento", postulante.NumeroDocumento);
+                parameters.Add("@TipoDocumento", postulante.TipoDocumento);
+                parameters.Add("@Correo", postulante.Correo);
+                parameters.Add("@Telefono", postulante.Telefono);
+                parameters.Add("@Direccion", postulante.Direccion);
+                parameters.Add("@FechaNacimiento", postulante.FechaNacimiento);
+                parameters.Add("@Estado", postulante.Estado);
+
+                // Output parameter
+                parameters.Add("@NewId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                await connection.ExecuteAsync("Admision.SP_RegistrarPostulante", parameters, commandType: CommandType.StoredProcedure, transaction: transaction);
+
+                var newId = parameters.Get<int>("@NewId");
+                transaction.Commit();
+                return newId;
+            }
+            catch (SqlException)
+            {
+                try { transaction.Rollback(); } catch { }
+                throw;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,44 @@
+﻿using System.Data;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Fichas de Postulación
+/// </summary>
+public class FichaPostulacionRepository : Repository<FichaPostulacion>, IFichaPostulacionRepository
+{
+    protected override string TableName => "FichasPostulacion";
+
+    public FichaPostulacionRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Obtiene las fichas de postulación de un postulante
+    /// </summary>
+    public async Task<IEnumerable<FichaPostulacion>> GetByPostulanteIdAsync(int idPostulante)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdPostulante = @IdPostulante";
+            return await connection.QueryAsync<FichaPostulacion>(query, new { IdPostulante = idPostulante });
+        }
+    }
+
+    /// <summary>
+    /// Obtiene las fichas de postulación para un programa académico
+    /// </summary>
+    public async Task<IEnumerable<FichaPostulacion>> GetByProgramaIdAsync(int idPrograma)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdProgramaAcademico = @IdProgramaAcademico";
+            return await connection.QueryAsync<FichaPostulacion>(query, new { IdProgramaAcademico = idPrograma });
+        }
+    }
+}

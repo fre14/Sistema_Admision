@@ -1,0 +1,147 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using Dapper;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Clase genérica base para implementar repositorios con Dapper
+/// </summary>
+/// <typeparam name="T">Tipo de entidad</typeparam>
+public abstract class Repository<T> : IRepository<T> where T : class
+{
+    /// <summary>
+    /// Connection string para acceder a la base de datos
+    /// </summary>
+    protected readonly string _connectionString;
+
+    /// <summary>
+    /// Nombre de la tabla en la base de datos
+    /// </summary>
+    protected abstract string TableName { get; }
+
+    /// <summary>
+    /// Constructor del repositorio
+    /// </summary>
+    /// <param name="connectionString">Cadena de conexión a la base de datos</param>
+    protected Repository(string connectionString)
+    {
+        _connectionString = connectionString;
+    }
+
+    /// <summary>
+    /// Obtiene una conexión a la base de datos SQL Server
+    /// </summary>
+    /// <returns>Instancia de SqlConnection</returns>
+    protected SqlConnection GetConnection()
+    {
+        return new SqlConnection(_connectionString);
+    }
+
+    /// <summary>
+    /// Obtiene una entidad por su identificador
+    /// </summary>
+    /// <param name="id">Identificador de la entidad</param>
+    /// <returns>La entidad encontrada o null</returns>
+    public virtual async Task<T?> GetByIdAsync(int id)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdPostulante = @Id OR Id = @Id OR IdUsuario = @Id OR IdExamen = @Id OR IdResultado = @Id OR IdProgramaAcademico = @Id";
+            return await connection.QueryFirstOrDefaultAsync<T>(query, new { Id = id });
+        }
+    }
+
+    /// <summary>
+    /// Obtiene todas las entidades
+    /// </summary>
+    /// <returns>Lista de todas las entidades</returns>
+    public virtual async Task<IEnumerable<T>> GetAllAsync()
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName}";
+            return await connection.QueryAsync<T>(query);
+        }
+    }
+
+    /// <summary>
+    /// Crea una nueva entidad usando un Stored Procedure
+    /// </summary>
+    /// <param name="entity">La entidad a crear</param>
+    /// <returns>La entidad creada con su identificador asignado</returns>
+    public virtual async Task<T> CreateAsync(T entity)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var parameters = new DynamicParameters();
+
+            // Agregar parámetros de la entidad
+            var properties = typeof(T).GetProperties();
+            foreach (var prop in properties)
+            {
+                var value = prop.GetValue(entity);
+                parameters.Add($"@{prop.Name}", value);
+            }
+
+            // Ejecutar stored procedure de creación
+            var sprocName = $"SP_Create{typeof(T).Name}";
+            var result = await connection.ExecuteAsync(sprocName, parameters, commandType: CommandType.StoredProcedure);
+
+            return entity;
+        }
+    }
+
+    /// <summary>
+    /// Actualiza una entidad existente usando un Stored Procedure
+    /// </summary>
+    /// <param name="entity">La entidad a actualizar</param>
+    /// <returns>La entidad actualizada</returns>
+    public virtual async Task<T> UpdateAsync(T entity)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var parameters = new DynamicParameters();
+
+            // Agregar parámetros de la entidad
+            var properties = typeof(T).GetProperties();
+            foreach (var prop in properties)
+            {
+                var value = prop.GetValue(entity);
+                parameters.Add($"@{prop.Name}", value);
+            }
+
+            // Ejecutar stored procedure de actualización
+            var sprocName = $"SP_Update{typeof(T).Name}";
+            await connection.ExecuteAsync(sprocName, parameters, commandType: CommandType.StoredProcedure);
+
+            return entity;
+        }
+    }
+
+    /// <summary>
+    /// Elimina una entidad por su identificador usando un Stored Procedure
+    /// </summary>
+    /// <param name="id">Identificador de la entidad a eliminar</param>
+    /// <returns>true si la eliminación fue exitosa</returns>
+    public virtual async Task<bool> DeleteAsync(int id)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var parameters = new DynamicParameters();
+            parameters.Add("@Id", id);
+
+            // Ejecutar stored procedure de eliminación
+            var sprocName = $"SP_Delete{typeof(T).Name}";
+            var result = await connection.ExecuteAsync(sprocName, parameters, commandType: CommandType.StoredProcedure);
+
+            return result > 0;
+        }
+    }
+}

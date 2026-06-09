@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/SAA.API/">
+    <Project Path="SAA.API/SAA.API.AppHost/SAA.API.AppHost.csproj" />
+    <Project Path="SAA.API/SAA.API.Server/SAA.API.Server.csproj" />
+  </Folder>
+  <Project Path="SAA.Application/SAA.Application.csproj" />
+  <Project Path="SAA.Domain/SAA.Domain.csproj" />
+  <Project Path="SAA.Infrastructure/SAA.Infrastructure.csproj" />
+  <Project Path="SAA.Tests/SAA.Tests.csproj" />
+</Solution>

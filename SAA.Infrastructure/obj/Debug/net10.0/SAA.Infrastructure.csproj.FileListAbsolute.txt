@@ -1,0 +1,72 @@
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.csproj.AssemblyReference.cache
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.AssemblyInfoInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.AssemblyInfo.cs
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.csproj.CoreCompileInputs.cache
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\SAA.Infrastructure.deps.json
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\SAA.Infrastructure.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\SAA.Infrastructure.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\SAA.Application.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\SAA.Domain.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\SAA.Application.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\SAA.Domain.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infr.4DDF6851.Up2Date
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\refint\SAA.Infrastructure.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.pdb
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\obj\Debug\net10.0\ref\SAA.Infrastructure.dll
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Black.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-BlackItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Bold.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-BoldItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraBold.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraBoldItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraLight.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraLightItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Italic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Light.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-LightItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Medium.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-MediumItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Regular.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-SemiBold.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-SemiBoldItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Thin.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ThinItalic.ttf
+C:\calidad labo\SAA.Solution\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\OFL.txt
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Black.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-BlackItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Bold.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-BoldItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraBold.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraBoldItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraLight.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ExtraLightItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Italic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Light.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-LightItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Medium.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-MediumItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Regular.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-SemiBold.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-SemiBoldItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-Thin.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\Lato-ThinItalic.ttf
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\LatoFont\OFL.txt
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\SAA.Infrastructure.deps.json
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\SAA.Infrastructure.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\SAA.Infrastructure.pdb
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\SAA.Application.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\SAA.Domain.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\SAA.Application.pdb
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\bin\Debug\net10.0\SAA.Domain.pdb
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.AssemblyInfo.cs
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infr.4DDF6851.Up2Date
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\refint\SAA.Infrastructure.dll
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\SAA.Infrastructure.pdb
+C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Infrastructure\obj\Debug\net10.0\ref\SAA.Infrastructure.dll

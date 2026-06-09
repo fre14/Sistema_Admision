@@ -1,0 +1,45 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Programas Académicos
+/// </summary>
+public class ProgramaAcademicoRepository : Repository<ProgramaAcademico>, IProgramaAcademicoRepository
+{
+    protected override string TableName => "ProgramasAcademicos";
+
+    public ProgramaAcademicoRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Busca un programa por su código
+    /// </summary>
+    public async Task<ProgramaAcademico?> GetByCodigoAsync(string codigo)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE Codigo = @Codigo";
+            return await connection.QueryFirstOrDefaultAsync<ProgramaAcademico>(query, new { Codigo = codigo });
+        }
+    }
+
+    /// <summary>
+    /// Obtiene programas activos
+    /// </summary>
+    public async Task<IEnumerable<ProgramaAcademico>> GetActivosAsync()
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE Estado = @Estado";
+            return await connection.QueryAsync<ProgramaAcademico>(query, new { Estado = "Activo" });
+        }
+    }
+}

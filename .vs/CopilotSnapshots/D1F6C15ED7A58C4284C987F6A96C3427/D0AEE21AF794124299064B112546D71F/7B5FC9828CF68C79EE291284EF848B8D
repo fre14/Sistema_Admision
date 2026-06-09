@@ -1,0 +1,123 @@
+﻿using SAA.Domain.Entities;
+using SAA.Infrastructure.Data;
+
+namespace SAA.Infrastructure.Services;
+
+/// <summary>
+/// Servicio para inicializar datos de prueba en la base de datos
+/// </summary>
+public class SeedDataService
+{
+    private readonly SAADbContext _context;
+
+    public SeedDataService(SAADbContext context)
+    {
+        _context = context;
+    }
+
+    /// <summary>
+    /// Siembra datos iniciales (usuario admin y postulantes de prueba)
+    /// </summary>
+    public async Task SeedAsync()
+    {
+        try
+        {
+            // Aplicar migraciones pendientes
+            await _context.Database.EnsureCreatedAsync();
+
+            // Verificar si ya existen usuarios
+            if (_context.Usuarios.Any())
+            {
+                return; // Datos ya existen
+            }
+
+            // Crear usuario administrador
+            var usuarioAdmin = new Usuario
+            {
+                NombreUsuario = "fredy",
+                Contrasena = "123456", // En producción usar hash
+                NombreCompleto = "Fredy - Administrador",
+                Correo = "fredy@saa.edu.pe",
+                Rol = "Administrador",
+                Estado = "Activo",
+                FechaCreacion = DateTime.Now
+            };
+
+            _context.Usuarios.Add(usuarioAdmin);
+            await _context.SaveChangesAsync();
+
+            // Crear postulantes de prueba
+            var postulantes = new List<Postulante>
+            {
+                new Postulante
+                {
+                    NombreCompleto = "Juan Pérez García",
+                    NumeroDocumento = "12345678",
+                    TipoDocumento = "DNI",
+                    Correo = "juan.perez@example.com",
+                    Telefono = "987654321",
+                    Direccion = "Av. Principal 123",
+                    FechaNacimiento = new DateTime(2000, 5, 15),
+                    Estado = "Activo",
+                    FechaCreacion = DateTime.Now
+                },
+                new Postulante
+                {
+                    NombreCompleto = "María López Martínez",
+                    NumeroDocumento = "87654321",
+                    TipoDocumento = "DNI",
+                    Correo = "maria.lopez@example.com",
+                    Telefono = "987654322",
+                    Direccion = "Calle Secundaria 456",
+                    FechaNacimiento = new DateTime(2001, 3, 20),
+                    Estado = "Activo",
+                    FechaCreacion = DateTime.Now
+                },
+                new Postulante
+                {
+                    NombreCompleto = "Carlos Rodríguez Hernández",
+                    NumeroDocumento = "11223344",
+                    TipoDocumento = "DNI",
+                    Correo = "carlos.rodriguez@example.com",
+                    Telefono = "987654323",
+                    Direccion = "Av. Terciaria 789",
+                    FechaNacimiento = new DateTime(1999, 11, 8),
+                    Estado = "Activo",
+                    FechaCreacion = DateTime.Now
+                },
+                new Postulante
+                {
+                    NombreCompleto = "Ana González Díaz",
+                    NumeroDocumento = "55667788",
+                    TipoDocumento = "DNI",
+                    Correo = "ana.gonzalez@example.com",
+                    Telefono = "987654324",
+                    Direccion = "Calle Principal 321",
+                    FechaNacimiento = new DateTime(2000, 7, 12),
+                    Estado = "Activo",
+                    FechaCreacion = DateTime.Now
+                },
+                new Postulante
+                {
+                    NombreCompleto = "Pedro Sánchez Flores",
+                    NumeroDocumento = "99887766",
+                    TipoDocumento = "DNI",
+                    Correo = "pedro.sanchez@example.com",
+                    Telefono = "987654325",
+                    Direccion = "Av. Cuarta 654",
+                    FechaNacimiento = new DateTime(2001, 9, 25),
+                    Estado = "Activo",
+                    FechaCreacion = DateTime.Now
+                }
+            };
+
+            _context.Postulantes.AddRange(postulantes);
+            await _context.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al sembrar datos: {ex.Message}");
+            throw;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace SAA.Domain.Interfaces;
+
+/// <summary>
+/// Interface específica para operaciones del repositorio de Exámenes de Admisión
+/// </summary>
+public interface IExamenRepository : IRepository<Entities.ExamenAdmision>
+{
+    /// <summary>
+    /// Obtiene los exámenes asignados a un postulante
+    /// </summary>
+    /// <param name="idPostulante">Identificador del postulante</param>
+    /// <returns>Lista de exámenes del postulante</returns>
+    Task<IEnumerable<Entities.ExamenAdmision>> GetByPostulanteIdAsync(int idPostulante);
+
+    /// <summary>
+    /// Obtiene los exámenes pendientes de un postulante
+    /// </summary>
+    /// <param name="idPostulante">Identificador del postulante</param>
+    /// <returns>Lista de exámenes pendientes</returns>
+    Task<IEnumerable<Entities.ExamenAdmision>> GetPendientesByPostulanteIdAsync(int idPostulante);
+
+    /// <summary>
+    /// Registra un examen (incluye puntaje)
+    /// </summary>
+    Task<int> RegistrarExamenAsync(Entities.ExamenAdmision examen);
+
+    /// <summary>
+    /// Confirma un examen y realiza clasificación automática
+    /// </summary>
+    Task<bool> ConfirmarExamenYClasificarAsync(int idExamen);
+}

@@ -1,0 +1,54 @@
+Summary
+  Generated on: 26/05/2026 - 10:21:16
+  Coverage date: 26/05/2026 - 5:21:11
+  Parser: Cobertura
+  Assemblies: 3
+  Classes: 28
+  Files: 25
+  Line coverage: 54.6%
+  Covered lines: 268
+  Uncovered lines: 222
+  Coverable lines: 490
+  Total lines: 1005
+  Branch coverage: 58.6% (34 of 58)
+  Covered branches: 34
+  Total branches: 58
+  Method coverage: 51.8% (84 of 162)
+  Full method coverage: 50.6% (82 of 162)
+  Covered methods: 84
+  Fully covered methods: 82
+  Total methods: 162
+
+SAA.Application                                   79.6%
+  SAA.Application.DTOs.CrearPostulanteDto          100%
+  SAA.Application.DTOs.LoginRequestDto             100%
+  SAA.Application.DTOs.LoginResponseDto            100%
+  SAA.Application.DTOs.PostulanteResponseDto       100%
+  SAA.Application.DTOs.RegistrarExamenDto            0%
+  SAA.Application.DTOs.ReporteIngresanteDto        100%
+  SAA.Application.DTOs.UsuarioDto                  100%
+  SAA.Application.Services.AuthService             100%
+  SAA.Application.Services.MotorAdmisionService   69.2%
+  SAA.Application.Services.PostulanteService      72.7%
+
+SAA.Domain                                        33.6%
+  SAA.Domain.Entities.ConfiguracionSistema           0%
+  SAA.Domain.Entities.DocumentoPostulante            0%
+  SAA.Domain.Entities.ExamenAdmision              46.1%
+  SAA.Domain.Entities.FichaPostulacion               0%
+  SAA.Domain.Entities.LogAuditoria                   0%
+  SAA.Domain.Entities.LogMotorAdmision               0%
+  SAA.Domain.Entities.Matricula                      0%
+  SAA.Domain.Entities.Notificacion                   0%
+  SAA.Domain.Entities.PeriodoAdmision                0%
+  SAA.Domain.Entities.Postulante                    75%
+  SAA.Domain.Entities.ProgramaAcademico             50%
+  SAA.Domain.Entities.ResultadoAdmision             60%
+  SAA.Domain.Entities.Rol                            0%
+  SAA.Domain.Entities.Sesion                         0%
+  SAA.Domain.Entities.TipoDocumento                  0%
+  SAA.Domain.Entities.Usuario                       90%
+
+SAA.Infrastructure                                19.6%
+  SAA.Infrastructure.Data.SAADbContext             100%
+  SAA.Infrastructure.Services.SeedDataService        0%

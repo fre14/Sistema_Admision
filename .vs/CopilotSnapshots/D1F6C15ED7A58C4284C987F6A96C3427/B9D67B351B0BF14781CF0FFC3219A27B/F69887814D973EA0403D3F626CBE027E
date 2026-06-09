@@ -1,0 +1,44 @@
+﻿using Microsoft.EntityFrameworkCore;
+using SAA.Domain.Entities;
+
+namespace SAA.Infrastructure.Data;
+
+public class SAADbContext : DbContext
+{
+    public SAADbContext(DbContextOptions<SAADbContext> options) : base(options)
+    {
+    }
+
+    // Seguridad
+    public DbSet<Usuario> Usuarios { get; set; } = null!;
+    public DbSet<Rol> Roles { get; set; } = null!;
+
+    // Admision
+    public DbSet<Postulante> Postulantes { get; set; } = null!;
+    public DbSet<FichaPostulacion> FichasPostulacion { get; set; } = null!;
+    public DbSet<ExamenAdmision> ExamenesAdmision { get; set; } = null!;
+    public DbSet<ResultadoAdmision> ResultadosAdmision { get; set; } = null!;
+
+    // Config
+    public DbSet<ProgramaAcademico> ProgramasAcademicos { get; set; } = null!;
+    public DbSet<PeriodoAdmision> PeriodosAdmision { get; set; } = null!;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // Seguridad
+        modelBuilder.Entity<Usuario>().ToTable("Usuario", "Seguridad");
+        modelBuilder.Entity<Rol>().ToTable("Rol", "Seguridad");
+
+        // Admision
+        modelBuilder.Entity<Postulante>().ToTable("Postulante", "Admision");
+        modelBuilder.Entity<FichaPostulacion>().ToTable("FichaPostulacion", "Admision");
+        modelBuilder.Entity<ExamenAdmision>().ToTable("ExamenAdmision", "Admision").HasKey(e => e.IdExamen);
+        modelBuilder.Entity<ResultadoAdmision>().ToTable("ResultadoAdmision", "Admision");
+
+        // Config
+        modelBuilder.Entity<ProgramaAcademico>().ToTable("ProgramaAcademico", "Config");
+        modelBuilder.Entity<PeriodoAdmision>().ToTable("PeriodoAdmision", "Config");
+    }
+}

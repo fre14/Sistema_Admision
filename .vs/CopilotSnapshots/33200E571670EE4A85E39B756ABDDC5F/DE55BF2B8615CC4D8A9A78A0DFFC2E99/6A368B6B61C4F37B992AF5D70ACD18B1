@@ -1,0 +1,45 @@
+﻿using System.Data;
+using System.Data.SqlClient;
+using Dapper;
+using SAA.Domain.Entities;
+using SAA.Domain.Interfaces;
+
+namespace SAA.Infrastructure.Repositories;
+
+/// <summary>
+/// Implementación del repositorio de Exámenes de Admisión
+/// </summary>
+public class ExamenRepository : Repository<ExamenAdmision>, IExamenRepository
+{
+    protected override string TableName => "ExamenesAdmision";
+
+    public ExamenRepository(string connectionString) : base(connectionString)
+    {
+    }
+
+    /// <summary>
+    /// Obtiene los exámenes asignados a un postulante
+    /// </summary>
+    public async Task<IEnumerable<ExamenAdmision>> GetByPostulanteIdAsync(int idPostulante)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdPostulante = @IdPostulante";
+            return await connection.QueryAsync<ExamenAdmision>(query, new { IdPostulante = idPostulante });
+        }
+    }
+
+    /// <summary>
+    /// Obtiene los exámenes pendientes de un postulante
+    /// </summary>
+    public async Task<IEnumerable<ExamenAdmision>> GetPendientesByPostulanteIdAsync(int idPostulante)
+    {
+        using (var connection = GetConnection())
+        {
+            await connection.OpenAsync();
+            var query = $"SELECT * FROM {TableName} WHERE IdPostulante = @IdPostulante AND Estado = @Estado";
+            return await connection.QueryAsync<ExamenAdmision>(query, new { IdPostulante = idPostulante, Estado = "Pendiente" });
+        }
+    }
+}
