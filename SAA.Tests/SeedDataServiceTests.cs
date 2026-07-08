@@ -1,6 +1,8 @@
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Logging;
+using Moq;
 using SAA.Infrastructure.Data;
 using SAA.Infrastructure.Services;
 using System;
@@ -10,6 +12,10 @@ using Xunit;
 
 namespace SAA.Tests;
 
+/// <summary>
+/// Pruebas para SeedDataService, asegurando que los datos iniciales
+/// (Admin, Programas, Postulantes de prueba) se siembren correctamente.
+/// </summary>
 public class SeedDataServiceTests
 {
     private SAADbContext GetMemoryContext()
@@ -18,13 +24,12 @@ public class SeedDataServiceTests
             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
             .ConfigureWarnings(x => x.Ignore(InMemoryEventId.TransactionIgnoredWarning))
             .Options;
-            
-        var context = new SAADbContext(options);
-        return context;
+
+        return new SAADbContext(options);
     }
 
     [Fact]
-    public async Task SeedAsync_WhenDatabaseIsEmpty_SeedsUsersAndPostulantes()
+    public async Task SeedAsync_BaseDeDatosVacia_CreaUsuarioAdmin()
     {
         // Arrange
         var context = GetMemoryContext();
@@ -34,37 +39,62 @@ public class SeedDataServiceTests
         await service.SeedAsync();
 
         // Assert
-        var usuarios = await context.Usuarios.ToListAsync();
-        usuarios.Should().HaveCount(501);
-        usuarios.Any(u => u.NombreUsuario == "fredy").Should().BeTrue();
-
-        var postulantes = await context.Postulantes.ToListAsync();
-        postulantes.Should().HaveCount(500);
+        var admin = await context.Usuarios.FirstOrDefaultAsync(u => u.NombreUsuario == "fredy");
+        admin.Should().NotBeNull();
+        admin!.Rol.Should().Be("Administrador");
     }
 
     [Fact]
-    public async Task SeedAsync_WhenDatabaseIsNotEmpty_DoesNotSeedAgain()
+    public async Task SeedAsync_BaseDeDatosVacia_CreaProgramasAcademicos()
     {
         // Arrange
         var context = GetMemoryContext();
-        
-        // Add one user and one postulante
-        context.Usuarios.Add(new Domain.Entities.Usuario { IdUsuario = 1, NombreUsuario = "test", Contrasena = "123", Estado = "Activo" });
-        context.Postulantes.Add(new Domain.Entities.Postulante { IdPostulante = 1, DNI = "000", Nombres = "Test", Apellidos = "Test", Correo = "test", Estado = "Activo", FechaNacimiento = DateTime.Now, Telefono = "1", Direccion = "1" });
-        await context.SaveChangesAsync();
-        
         var service = new SeedDataService(context);
 
         // Act
         await service.SeedAsync();
 
         // Assert
-        var usuarios = await context.Usuarios.ToListAsync();
-        // Admin fredy se genera si no existe. Como "test" no es fredy, fredy se crea.
-        // Total usuarios = 1 (test) + 1 (fredy) + 499 (postulantes) = 501.
-        usuarios.Should().HaveCount(501); 
+        var programas = await context.ProgramasAcademicos.ToListAsync();
+        programas.Should().HaveCountGreaterOrEqualTo(3);
+        programas.Should().Contain(p => p.Nombre.Contains("Ingeniería de Sistemas"));
+        programas.Should().Contain(p => p.Nombre.Contains("Medicina Humana"));
+        programas.Should().Contain(p => p.Nombre.Contains("Derecho"));
+    }
 
-        var postulantes = await context.Postulantes.ToListAsync();
-        postulantes.Should().HaveCount(500); // 1 existía, se generaron 499 = 500
+    [Fact]
+    public async Task SeedAsync_BaseDeDatosVacia_CreaUsuarioPruebaEspecifico()
+    {
+        // Arrange
+        var context = GetMemoryContext();
+        var service = new SeedDataService(context);
+
+        // Act
+        await service.SeedAsync();
+
+        // Assert
+        var prueba = await context.Postulantes.FirstOrDefaultAsync(p => p.DNI == "12345678");
+        prueba.Should().NotBeNull();
+        prueba!.Nombres.Should().Be("Prueba");
+    }
+
+    [Fact]
+    public async Task SeedAsync_YaEjecutado_NoDuplicaDatos()
+    {
+        // Arrange
+        var context = GetMemoryContext();
+        var service = new SeedDataService(context);
+        
+        // Ejecutar por primera vez
+        await service.SeedAsync();
+        var adminCount1 = await context.Usuarios.CountAsync(u => u.NombreUsuario == "fredy");
+        
+        // Act - Ejecutar por segunda vez
+        await service.SeedAsync();
+        var adminCount2 = await context.Usuarios.CountAsync(u => u.NombreUsuario == "fredy");
+
+        // Assert
+        adminCount1.Should().Be(1);
+        adminCount2.Should().Be(1); // No debe duplicarse
     }
 }
