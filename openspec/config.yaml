@@ -1,0 +1,38 @@
+schema: spec-driven
+
+context: |
+  Proyecto: Sistema Automatizado de Admisión (SAA)
+  Dominio: Gestión de procesos de admisión en instituciones educativas
+  Enfoque: Desarrollo Dirigido por Especificaciones (SSD)
+  Metodología: Scrum (adaptada a un solo desarrollador)
+  
+  Tech Stack Backend:
+    - .NET 10, C#, ASP.NET Core Web API
+    - Entity Framework Core 10 (SQL Server)
+    - Clean Architecture (Domain, Application, Infrastructure, API)
+    - JWT para autenticación
+  
+  Tech Stack Frontend:
+    - React 19, TypeScript, Vite 7, CSS
+  
+  Testing:
+    - xUnit (pruebas unitarias e integración)
+    - Coverlet (cobertura de código >90%)
+    - Moq (mocking)
+    - FluentAssertions
+  
+  Principios:
+    - SOLID, Clean Architecture, Dependency Inversion
+    - Conventional Commits
+    - ISO/IEC 25010:2023 para calidad de software
+
+rules:
+  proposal:
+    - Incluir sección de requisitos funcionales y no funcionales
+    - Documentar el enfoque SSD aplicado
+  design:
+    - Detallar las capas de Clean Architecture
+    - Incluir entidades del dominio
+  tasks:
+    - Organizar por sprints de Scrum
+    - Incluir criterios de aceptación
