@@ -15,7 +15,7 @@ public class SAA_API_Server : global::Aspire.Hosting.IProjectMetadata
     /// <summary>
     /// The path to the SAA_API_Server project.
     /// </summary>
-    public string ProjectPath => """C:\calidad labo\SAA.Solution\SAA.API\SAA.API.Server\SAA.API.Server.csproj""";
+    public string ProjectPath => """C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\SAA.API.Server.csproj""";
 
     /// <summary>
     /// Gets a value indicating whether building the project before running it should be suppressed.

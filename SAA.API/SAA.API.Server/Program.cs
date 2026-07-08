@@ -40,13 +40,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// Obtener cadena de conexión
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
-    ?? throw new InvalidOperationException("No se encontró la cadena de conexión 'DefaultConnection'.");
-
-// Registrar SAADbContext con EF Core
-builder.Services.AddDbContext<SAADbContext>(options =>
-    options.UseSqlServer(connectionString));
+// Registrar SAADbContext con EF Core (InMemory para Producción, SQL Server para Desarrollo)
+if (builder.Environment.IsProduction())
+{
+    builder.Services.AddDbContext<SAADbContext>(options =>
+        options.UseInMemoryDatabase("SAAProductionDb"));
+}
+else
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+        ?? throw new InvalidOperationException("No se encontró la cadena de conexión 'DefaultConnection'.");
+    builder.Services.AddDbContext<SAADbContext>(options =>
+        options.UseSqlServer(connectionString));
+}
 
 // Register IApplicationDbContext mapping to SAADbContext
 builder.Services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<SAADbContext>());

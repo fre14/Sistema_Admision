@@ -17,5 +17,5 @@ public class SAA_API_AppHost
     /// <summary>
     /// The path to the Aspire Host project.
     /// </summary>
-    public static string ProjectPath => """C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.API\SAA.API.AppHost""";
+    public static string ProjectPath => """C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.AppHost""";
 }

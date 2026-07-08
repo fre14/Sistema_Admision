@@ -15,7 +15,7 @@ public class SAA_Application : global::Aspire.Hosting.IProjectMetadata
     /// <summary>
     /// The path to the SAA_Application project.
     /// </summary>
-    public string ProjectPath => """C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Application\SAA.Application.csproj""";
+    public string ProjectPath => """C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Application\SAA.Application.csproj""";
 
     /// <summary>
     /// Gets a value indicating whether building the project before running it should be suppressed.

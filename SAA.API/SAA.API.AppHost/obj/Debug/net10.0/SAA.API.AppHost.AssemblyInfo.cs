@@ -12,23 +12,23 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d6a636ac-4194-40d1-b229-513da0729efa")]
-[assembly: System.Reflection.AssemblyMetadata("dcpclipath", "C:\\Users\\sacac_r\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\13.1.0\\tool" +
+[assembly: System.Reflection.AssemblyMetadata("dcpclipath", "C:\\Users\\usuario\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\13.1.0\\tool" +
     "s\\dcp.exe")]
-[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", "C:\\Users\\sacac_r\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\13.1.0\\tool" +
+[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", "C:\\Users\\usuario\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\13.1.0\\tool" +
     "s\\ext\\")]
-[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\sacac_r\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\13.1.0\\tool" +
+[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\usuario\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\13.1.0\\tool" +
     "s\\ext\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.API\\SAA." +
-    "API.AppHost")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\Users\\usuario\\.gemini\\antigravity\\scratch\\Sistema_Admision\\SAA.API\\SAA.API.App" +
+    "Host")]
 [assembly: System.Reflection.AssemblyMetadata("apphostprojectname", "SAA.API.AppHost.csproj")]
-[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\sacac_r\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\13.1.0\\tools\\Aspire" +
+[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\usuario\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\13.1.0\\tools\\Aspire" +
     ".Dashboard.exe")]
-[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.API\\SAA." +
-    "API.AppHost\\obj\\")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "C:\\Users\\usuario\\.gemini\\antigravity\\scratch\\Sistema_Admision\\SAA.API\\SAA.API.App" +
+    "Host\\obj\\")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SAA.API.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+153e8987347d6ae7202756c0f0a978c8646ddd46")]
 [assembly: System.Reflection.AssemblyProductAttribute("SAA.API.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SAA.API.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
