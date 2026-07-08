@@ -11,7 +11,8 @@ using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddServiceDefaults();
+// Aspire ServiceDefaults (solo disponible en desarrollo local con AppHost)
+try { builder.AddServiceDefaults(); } catch { /* No disponible en producción */ }
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -74,7 +75,8 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.MapDefaultEndpoints();
+// Aspire endpoints (solo disponible en desarrollo local)
+try { app.MapDefaultEndpoints(); } catch { /* No disponible en producción */ }
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
