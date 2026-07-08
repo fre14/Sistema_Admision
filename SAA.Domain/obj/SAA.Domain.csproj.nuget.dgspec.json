@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\SAA.Domain.csproj": {}
+    "C:\\Users\\usuario\\.gemini\\antigravity\\scratch\\Sistema_Admision\\SAA.Domain\\SAA.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\SAA.Domain.csproj": {
+    "C:\\Users\\usuario\\.gemini\\antigravity\\scratch\\Sistema_Admision\\SAA.Domain\\SAA.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\SAA.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\.gemini\\antigravity\\scratch\\Sistema_Admision\\SAA.Domain\\SAA.Domain.csproj",
         "projectName": "SAA.Domain",
-        "projectPath": "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\SAA.Domain.csproj",
-        "packagesPath": "C:\\Users\\sacac_r\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sacac_r\\Downloads\\SAA.Solution_OFICIAL\\SAA.Solution_OFICIAL\\SAA.Domain\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\.gemini\\antigravity\\scratch\\Sistema_Admision\\SAA.Domain\\SAA.Domain.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\.gemini\\antigravity\\scratch\\Sistema_Admision\\SAA.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sacac_r\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,7 +41,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -77,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -22,3 +22,16 @@ C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Domain\
 C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Domain\obj\Debug\net10.0\refint\SAA.Domain.dll
 C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Domain\obj\Debug\net10.0\SAA.Domain.pdb
 C:\Users\sacac_r\Downloads\SAA.Solution_OFICIAL\SAA.Solution_OFICIAL\SAA.Domain\obj\Debug\net10.0\ref\SAA.Domain.dll
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\bin\Debug\net10.0\SAA.Domain.deps.json
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\bin\Debug\net10.0\SAA.Domain.dll
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\bin\Debug\net10.0\SAA.Domain.pdb
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.csproj.AssemblyReference.cache
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.AssemblyInfoInputs.cache
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.AssemblyInfo.cs
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.csproj.CoreCompileInputs.cache
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.sourcelink.json
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.dll
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\refint\SAA.Domain.dll
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\SAA.Domain.pdb
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Domain\obj\Debug\net10.0\ref\SAA.Domain.dll
