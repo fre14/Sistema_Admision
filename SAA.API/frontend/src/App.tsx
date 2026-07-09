@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
+const API_BASE_URL = import.meta.env.PROD ? 'https://sistema-admision-wlii.onrender.com' : '';
+
 function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
   const [userData, setUserData] = useState<any>(() => {
@@ -33,7 +35,7 @@ function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nombreUsuario: username, contrasena: password })
@@ -57,7 +59,7 @@ function App() {
   const fetchResultado = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/postulantes/mi-resultado', {
+      const res = await fetch(`${API_BASE_URL}/api/postulantes/mi-resultado`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -78,7 +80,7 @@ function App() {
   const fetchReporteTodos = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/admision/reporte-todos', {
+      const res = await fetch(`${API_BASE_URL}/api/admision/reporte-todos`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -100,7 +102,7 @@ function App() {
     if (!confirm('¿Estás seguro de volver a procesar los resultados?')) return;
     setLoading(true);
     try {
-      const res = await fetch('/api/admision/procesar', {
+      const res = await fetch(`${API_BASE_URL}/api/admision/procesar`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       });
