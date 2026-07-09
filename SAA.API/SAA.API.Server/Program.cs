@@ -42,7 +42,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 // Registrar SAADbContext con EF Core (SQL Server en ambos entornos)
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") 
+var connectionString = Environment.GetEnvironmentVariable("SQL_SERVER_CONNECTION") 
     ?? builder.Configuration.GetConnectionString("DefaultConnection") 
     ?? throw new InvalidOperationException("No se encontró la cadena de conexión.");
 builder.Services.AddDbContext<SAADbContext>(options =>
