@@ -245,21 +245,29 @@ function App() {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-top: 50px;
-            padding: 0 30px;
+            margin-top: 55px;
+            padding: 0 10px;
           }
           .sig-box {
             text-align: center;
-            width: 200px;
+            width: 260px;
           }
           .sig-line {
             border-top: 1px solid #94a3b8;
             margin-bottom: 8px;
           }
+          .sig-name {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #0f172a;
+            display: block;
+            margin-bottom: 2px;
+          }
           .sig-title {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #64748b;
             font-weight: 600;
+            line-height: 1.3;
           }
           .qr-placeholder {
             width: 90px;
@@ -327,13 +335,18 @@ function App() {
           </div>
 
           <div class="signatures">
+            <div class="sig-box">
+              <div class="sig-line"></div>
+              <span class="sig-name">Dr. Emilio Germán Ramírez Roca</span>
+              <span class="sig-title">Rector de la UNSCH</span>
+            </div>
             <div class="qr-placeholder">
               <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=SAA-UNSCH-INGRESANTE-${userData?.nombreUsuario || ''}-${resultado.puesto}" alt="QR" width="80" height="80" />
             </div>
             <div class="sig-box">
               <div class="sig-line"></div>
-              <span class="highlight">Dr. Richard Zapata C.</span>
-              <div class="sig-title">Director de Admisión</div>
+              <span class="sig-name">Dr. Hermes Segundo Bermúdez Valqui</span>
+              <span class="sig-title">Vicerrector Académico del VRAC UNSCH</span>
             </div>
           </div>
 
