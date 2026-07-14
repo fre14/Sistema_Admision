@@ -581,7 +581,7 @@ function App() {
                 <div className="error-alert">No hay estadísticas. Procesa el motor de admisión primero.</div>
               )}
             </div>
-          {/* ── PROGRAMAS Y VACANTES ── */}
+          )}
           {vistaAdmin === 'programas' && (
             <ProgramasView token={token} handleLogout={handleLogout} />
           )}
@@ -891,6 +891,8 @@ function EstadisticasView({ data }: { data: any }) {
       </div>
     </div>
   );
+}
+
 // ─────────────────────────────────────────────────────────
 // COMPONENTE: Gestión de Programas Académicos (CRUD)
 // ─────────────────────────────────────────────────────────
@@ -1204,7 +1206,7 @@ function CargaMasivaView({ token }: CargaMasivaViewProps) {
           />
         </div>
 
-        <div style={{ flex: 1, minWidth: '240px' }} className="glass-panel" style={{ padding: '20px', background: 'rgba(255,255,255,0.02)' }}>
+        <div className="glass-panel" style={{ flex: 1, minWidth: '240px', padding: '20px', background: 'rgba(255,255,255,0.02)' }}>
           <h4 style={{ marginBottom: '12px' }}>📖 Instrucciones del Formato</h4>
           <ul style={{ fontSize: '0.82rem', color: 'var(--text-muted)', paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
             <li>Cada fila representa un postulante.</li>
