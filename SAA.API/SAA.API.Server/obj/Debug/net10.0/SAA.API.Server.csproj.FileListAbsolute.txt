@@ -741,4 +741,4 @@ C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Se
 C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\obj\Debug\net10.0\SAA.API.Server.pdb
 C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\obj\Debug\net10.0\SAA.API.Server.genruntimeconfig.cache
 C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\obj\Debug\net10.0\ref\SAA.API.Server.dll
-C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\bin\Debug\net10.0\appsettings.Production.json

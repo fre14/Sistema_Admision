@@ -17,172 +17,103 @@ public class MotorAdmisionService
     public async Task RegistrarExamenAsync(RegistrarExamenDto dto)
     {
         var postulante = await _context.Postulantes.FindAsync(dto.IdPostulante);
-        if (postulante == null)
-            throw new Exception("Postulante no encontrado.");
+        if (postulante == null) throw new Exception("Postulante no encontrado.");
 
-        Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction? transaction = null;
-        try { transaction = await _context.Database.BeginTransactionAsync(); } catch (InvalidOperationException) { /* Ignored for InMemory DB */ }
-        
+        Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction? tx = null;
+        try { tx = await _context.Database.BeginTransactionAsync(); } catch (InvalidOperationException) { }
         try
         {
-            var examen = new ExamenAdmision
+            _context.ExamenesAdmision.Add(new ExamenAdmision
             {
                 IdPostulante = postulante.IdPostulante,
                 Puntaje = dto.Puntaje,
                 Observaciones = dto.Observaciones,
                 FechaExamen = DateTime.Now,
                 FechaCreacion = DateTime.Now
-            };
-
-            _context.ExamenesAdmision.Add(examen);
+            });
             await _context.SaveChangesAsync();
-            if (transaction != null) await transaction.CommitAsync();
+            if (tx != null) await tx.CommitAsync();
         }
-        catch
-        {
-            if (transaction != null) await transaction.RollbackAsync();
-            throw;
-        }
-        finally
-        {
-            if (transaction != null) await transaction.DisposeAsync();
-        }
+        catch { if (tx != null) await tx.RollbackAsync(); throw; }
+        finally { if (tx != null) await tx.DisposeAsync(); }
     }
 
     public async Task ProcesarResultadosAsync()
     {
-        Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction? transaction = null;
-        try { transaction = await _context.Database.BeginTransactionAsync(); } catch (InvalidOperationException) { /* Ignored for InMemory DB */ }
-        
+        Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction? tx = null;
+        try { tx = await _context.Database.BeginTransactionAsync(); } catch (InvalidOperationException) { }
         try
         {
-            var previousResultados = await _context.ResultadosAdmision.ToListAsync();
-            _context.ResultadosAdmision.RemoveRange(previousResultados);
+            var prev = await _context.ResultadosAdmision.ToListAsync();
+            _context.ResultadosAdmision.RemoveRange(prev);
             await _context.SaveChangesAsync();
 
-            var examenes = await _context.ExamenesAdmision
-                .ToListAsync();
-
+            var examenes = await _context.ExamenesAdmision.ToListAsync();
             var idsFichas = examenes.Select(e => e.IdFichaPostulacion).Distinct().ToList();
-            var fichas = await _context.FichasPostulacion
-                .Where(f => idsFichas.Contains(f.IdFichaPostulacion))
-                .ToListAsync();
-
+            var fichas = await _context.FichasPostulacion.Where(f => idsFichas.Contains(f.IdFichaPostulacion)).ToListAsync();
             var programas = await _context.ProgramasAcademicos.ToListAsync();
-            var postulantesAsignados = new System.Collections.Generic.HashSet<int>();
+            var asignados = new HashSet<int>();
 
             foreach (var prog in programas)
             {
-                var fichasPrograma = fichas.Where(f => f.IdProgramaAcademico == prog.IdProgramaAcademico).ToList();
-                var examenesPrograma = examenes.Where(e => fichasPrograma.Any(f => f.IdFichaPostulacion == e.IdFichaPostulacion))
-                                               .OrderByDescending(e => e.Puntaje)
-                                               .ToList();
+                var fichasProg = fichas.Where(f => f.IdProgramaAcademico == prog.IdProgramaAcademico).ToList();
+                var examenesProg = examenes
+                    .Where(e => fichasProg.Any(f => f.IdFichaPostulacion == e.IdFichaPostulacion))
+                    .OrderByDescending(e => e.Puntaje)
+                    .ToList();
 
-                int cuposAsignados = 0;
-                int ordenMeritoActual = 1;
-
-                foreach (var examen in examenesPrograma)
+                int cupos = 0, orden = 1;
+                foreach (var examen in examenesProg)
                 {
-                    string estadoFinal = "Desaprobado";
-                if (postulantesAsignados.Contains(examen.IdPostulante)) continue;
-
+                    if (asignados.Contains(examen.IdPostulante)) continue;
+                    string estado = "Desaprobado";
                     if (examen.Puntaje >= 50.0m)
-                    {
-                        if (cuposAsignados < (prog.Vacantes ?? 0))
-                        {
-                            estadoFinal = "Ingresante";
-                            cuposAsignados++;
-                        }
-                        else
-                        {
-                            estadoFinal = "Aprobado";
-                        }
-                    }
+                        estado = cupos < (prog.Vacantes ?? 0) ? "Ingresante" : "Aprobado";
+                    if (estado == "Ingresante") cupos++;
 
-                    var resultado = new ResultadoAdmision
+                    _context.ResultadosAdmision.Add(new ResultadoAdmision
                     {
                         IdPostulante = examen.IdPostulante,
                         IdProgramaAcademico = prog.IdProgramaAcademico,
                         Calificacion = examen.Puntaje,
-                        Resultado = estadoFinal,
-                        OrdenMerito = ordenMeritoActual,
+                        Resultado = estado,
+                        OrdenMerito = orden++,
                         FechaResultado = DateTime.Now
-                    };
-
-                    _context.ResultadosAdmision.Add(resultado);
-                postulantesAsignados.Add(examen.IdPostulante);
-                    ordenMeritoActual++;
+                    });
+                    asignados.Add(examen.IdPostulante);
                 }
             }
-
             await _context.SaveChangesAsync();
-            if (transaction != null) await transaction.CommitAsync();
+            if (tx != null) await tx.CommitAsync();
         }
-        catch
-        {
-            if (transaction != null) await transaction.RollbackAsync();
-            throw;
-        }
-        finally
-        {
-            if (transaction != null) await transaction.DisposeAsync();
-        }
+        catch { if (tx != null) await tx.RollbackAsync(); throw; }
+        finally { if (tx != null) await tx.DisposeAsync(); }
     }
 
     public async Task<List<ReporteIngresanteDto>> ObtenerReporteIngresantesAsync()
     {
-        var resultados = await _context.ResultadosAdmision
-            .Where(r => r.Resultado == "Ingresante")
-            .ToListAsync();
-
-        if (!resultados.Any()) return new List<ReporteIngresanteDto>();
-
-        var idsPostulantes = resultados.Select(r => r.IdPostulante).ToList();
-        var postulantes = await _context.Postulantes
-            .Where(p => idsPostulantes.Contains(p.IdPostulante))
-            .ToListAsync();
-
-        var programas = await _context.ProgramasAcademicos.ToListAsync();
-
-        var reporte = resultados.Select(r => {
-            var post = postulantes.FirstOrDefault(p => p.IdPostulante == r.IdPostulante);
-            var prog = programas.FirstOrDefault(p => p.IdProgramaAcademico == r.IdProgramaAcademico);
-
-            return new ReporteIngresanteDto
-            {
-                DNI = post?.DNI ?? "",
-                Nombres = post?.Nombres ?? "",
-                Apellidos = post?.Apellidos ?? "",
-                ProgramaAcademico = prog?.Nombre ?? "",
-                Puntaje = r.Calificacion ?? 0m,
-                Puesto = r.OrdenMerito ?? 1,
-                FechaAdmision = r.FechaResultado
-            };
-        }).OrderBy(r => r.Puesto).ToList();
-
-        return reporte;
+        var resultados = await _context.ResultadosAdmision.Where(r => r.Resultado == "Ingresante").ToListAsync();
+        return await MapearReporte(resultados);
     }
 
     public async Task<List<ReporteIngresanteDto>> ObtenerReporteTodosAsync()
     {
         var resultados = await _context.ResultadosAdmision.ToListAsync();
+        var reporte = await MapearReporte(resultados);
+        return reporte.OrderByDescending(r => r.Puntaje).ToList();
+    }
 
+    private async Task<List<ReporteIngresanteDto>> MapearReporte(List<ResultadoAdmision> resultados)
+    {
         if (!resultados.Any()) return new List<ReporteIngresanteDto>();
-
-        var idsPostulantes = resultados.Select(r => r.IdPostulante).ToList();
-        var postulantes = await _context.Postulantes
-            .Where(p => idsPostulantes.Contains(p.IdPostulante))
-            .ToListAsync();
-
+        var ids = resultados.Select(r => r.IdPostulante).ToList();
+        var postulantes = await _context.Postulantes.Where(p => ids.Contains(p.IdPostulante)).ToListAsync();
         var programas = await _context.ProgramasAcademicos.ToListAsync();
 
-        var reporte = resultados.Select(r => {
+        return resultados.Select(r =>
+        {
             var post = postulantes.FirstOrDefault(p => p.IdPostulante == r.IdPostulante);
             var prog = programas.FirstOrDefault(p => p.IdProgramaAcademico == r.IdProgramaAcademico);
-
-            // Using ReporteIngresanteDto but storing the actual result in a way that can be used if needed
-            // Wait, ReporteIngresanteDto doesn't have an "Estado" field! We should add it or use an anonymous type?
-            // Actually I should just use dynamic or create ReporteGeneralDto if needed, but the frontend can just rely on the new DTO if I update it.
             return new ReporteIngresanteDto
             {
                 DNI = post?.DNI ?? "",
@@ -194,8 +125,155 @@ public class MotorAdmisionService
                 FechaAdmision = r.FechaResultado,
                 Estado = r.Resultado ?? ""
             };
-        }).OrderByDescending(r => r.Puntaje).ToList();
+        }).ToList();
+    }
 
-        return reporte;
+    // ─────────────────────────────────────────────────────────────
+    // NUEVO: Obtener detalle de respuestas de un postulante por DNI
+    // ─────────────────────────────────────────────────────────────
+    public async Task<ReporteDetalladoPostulanteDto?> ObtenerDetallePostulanteAsync(string dni)
+    {
+        var postulante = await _context.Postulantes.FirstOrDefaultAsync(p => p.DNI == dni);
+        if (postulante == null) return null;
+
+        var examen = await _context.ExamenesAdmision
+            .Where(e => e.IdPostulante == postulante.IdPostulante)
+            .OrderByDescending(e => e.FechaExamen)
+            .FirstOrDefaultAsync();
+        if (examen == null) return null;
+
+        var resultado = await _context.ResultadosAdmision
+            .FirstOrDefaultAsync(r => r.IdPostulante == postulante.IdPostulante);
+
+        var programa = await _context.ProgramasAcademicos
+            .FirstOrDefaultAsync(p => p.IdProgramaAcademico == postulante.IdProgramaInteres);
+
+        var respuestas = await _context.RespuestasPostulante
+            .Where(r => r.IdPostulante == postulante.IdPostulante && r.IdExamen == examen.IdExamen)
+            .ToListAsync();
+
+        var preguntas = await _context.PreguntasExamen
+            .OrderBy(p => p.NumeroPregunta)
+            .ToListAsync();
+
+        var detalles = preguntas.Select(preg =>
+        {
+            var resp = respuestas.FirstOrDefault(r => r.IdPregunta == preg.IdPregunta);
+            return new DetalleRespuestaDto
+            {
+                NumeroPregunta = preg.NumeroPregunta,
+                Area = preg.Area,
+                Enunciado = preg.Enunciado,
+                OpcionA = preg.OpcionA,
+                OpcionB = preg.OpcionB,
+                OpcionC = preg.OpcionC,
+                OpcionD = preg.OpcionD,
+                RespuestaSeleccionada = resp?.RespuestaSeleccionada ?? "—",
+                RespuestaCorrecta = preg.RespuestaCorrecta,
+                EsCorrecta = resp?.EsCorrecta ?? false
+            };
+        }).ToList();
+
+        int correctas = detalles.Count(d => d.EsCorrecta);
+
+        return new ReporteDetalladoPostulanteDto
+        {
+            DNI = postulante.DNI,
+            Nombres = postulante.Nombres,
+            Apellidos = postulante.Apellidos,
+            ProgramaAcademico = programa?.Nombre ?? "",
+            Puntaje = examen.Puntaje ?? 0m,
+            TotalCorrectas = correctas,
+            TotalIncorrectas = 100 - correctas,
+            Estado = resultado?.Resultado ?? "Sin resultado",
+            Puesto = resultado?.OrdenMerito ?? 0,
+            Respuestas = detalles
+        };
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // NUEVO: Estadísticas globales del proceso de admisión
+    // ─────────────────────────────────────────────────────────────
+    public async Task<EstadisticasDto> ObtenerEstadisticasAsync()
+    {
+        var resultados = await _context.ResultadosAdmision.ToListAsync();
+        var programas = await _context.ProgramasAcademicos.ToListAsync();
+        var postulantes = await _context.Postulantes.ToListAsync();
+        var examenes = await _context.ExamenesAdmision.ToListAsync();
+
+        if (!resultados.Any())
+            return new EstadisticasDto { TotalPostulantes = postulantes.Count };
+
+        var puntajes = resultados.Select(r => r.Calificacion ?? 0m).ToList();
+        var top10 = await ObtenerReporteIngresantesAsync();
+
+        // Distribución por rangos de puntaje
+        var distribucion = new List<DistribucionPuntajeDto>
+        {
+            new() { Rango = "0–20",   Cantidad = puntajes.Count(p => p <= 20) },
+            new() { Rango = "21–40",  Cantidad = puntajes.Count(p => p > 20 && p <= 40) },
+            new() { Rango = "41–60",  Cantidad = puntajes.Count(p => p > 40 && p <= 60) },
+            new() { Rango = "61–80",  Cantidad = puntajes.Count(p => p > 60 && p <= 80) },
+            new() { Rango = "81–100", Cantidad = puntajes.Count(p => p > 80) },
+        };
+
+        // Estadísticas por programa
+        var idsPosts = resultados.Select(r => r.IdPostulante).Distinct().ToList();
+        var fichas = await _context.FichasPostulacion
+            .Where(f => idsPosts.Contains(f.IdPostulante))
+            .ToListAsync();
+
+        var porPrograma = programas.Select(prog =>
+        {
+            var restsPrograma = resultados.Where(r => r.IdProgramaAcademico == prog.IdProgramaAcademico).ToList();
+            return new EstadisticaProgramaDto
+            {
+                Programa = prog.Nombre,
+                TotalPostulantes = restsPrograma.Count,
+                Ingresantes = restsPrograma.Count(r => r.Resultado == "Ingresante"),
+                Vacantes = prog.Vacantes ?? 0,
+                PromedioPrograma = restsPrograma.Any()
+                    ? Math.Round(restsPrograma.Average(r => r.Calificacion ?? 0m), 2)
+                    : 0m
+            };
+        }).Where(p => p.TotalPostulantes > 0).ToList();
+
+        // Promedio correctas (basado en puntaje que = nro correctas)
+        var promedioCorrectas = examenes.Any()
+            ? Math.Round(examenes.Average(e => e.Puntaje ?? 0m), 2)
+            : 0m;
+
+        return new EstadisticasDto
+        {
+            TotalPostulantes = resultados.Count,
+            TotalIngresantes = resultados.Count(r => r.Resultado == "Ingresante"),
+            TotalAprobados = resultados.Count(r => r.Resultado == "Aprobado"),
+            TotalDesaprobados = resultados.Count(r => r.Resultado == "Desaprobado"),
+            PromedioGeneral = puntajes.Any() ? Math.Round(puntajes.Average(), 2) : 0m,
+            PuntajeMaximo = puntajes.Any() ? puntajes.Max() : 0m,
+            PuntajeMinimo = puntajes.Any() ? puntajes.Min() : 0m,
+            PromedioCorrectas = promedioCorrectas,
+            PorPrograma = porPrograma,
+            Top10 = top10.Take(10).ToList(),
+            DistribucionPuntaje = distribucion
+        };
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // NUEVO: Exportar todos los resultados como CSV
+    // ─────────────────────────────────────────────────────────────
+    public async Task<string> ExportarResultadosCsvAsync()
+    {
+        var reporte = await ObtenerReporteTodosAsync();
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine("Puesto,DNI,Nombres,Apellidos,Programa Académico,Puntaje,Correctas,Estado,Fecha Admisión");
+
+        foreach (var r in reporte)
+        {
+            // Calcular correctas desde puntaje (puntaje = nro correctas en nuestro modelo)
+            int correctas = (int)Math.Round(r.Puntaje);
+            sb.AppendLine($"{r.Puesto},{r.DNI},{r.Nombres},{r.Apellidos},{r.ProgramaAcademico},{r.Puntaje},{correctas},{r.Estado},{r.FechaAdmision:dd/MM/yyyy}");
+        }
+        return sb.ToString();
     }
 }

@@ -1,4 +1,0 @@
-C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\wwwroot\index.html
-C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.API\SAA.API.Server\wwwroot\index.css
-wwwroot\index.css
-wwwroot\index.html

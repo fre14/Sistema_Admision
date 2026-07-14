@@ -1164,3 +1164,4 @@ C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Tests\bin\Debu
 C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Tests\obj\Debug\net10.0\SAA.Tests.csproj.Up2Date
 C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Tests\obj\Debug\net10.0\SAA.Tests.genruntimeconfig.cache
 C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Tests\obj\Debug\net10.0\ref\SAA.Tests.dll
+C:\Users\usuario\.gemini\antigravity\scratch\Sistema_Admision\SAA.Tests\bin\Debug\net10.0\appsettings.Production.json

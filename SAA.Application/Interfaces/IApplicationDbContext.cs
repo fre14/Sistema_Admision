@@ -14,6 +14,8 @@ public interface IApplicationDbContext
     DbSet<ResultadoAdmision> ResultadosAdmision { get; }
     DbSet<ProgramaAcademico> ProgramasAcademicos { get; }
     DbSet<PeriodoAdmision> PeriodosAdmision { get; }
+    DbSet<PreguntaExamen> PreguntasExamen { get; }
+    DbSet<RespuestaPostulante> RespuestasPostulante { get; }
 
     DatabaseFacade Database { get; }
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

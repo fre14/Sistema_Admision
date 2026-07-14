@@ -110,4 +110,66 @@ public class PostulanteService
             Puesto = resultado?.OrdenMerito ?? 0
         };
     }
+
+    /// <summary>Retorna el detalle de las 100 respuestas del postulante autenticado</summary>
+    public async Task<ReporteDetalladoPostulanteDto?> ObtenerMiDetalleAsync(string dni)
+    {
+        var postulante = await _context.Postulantes.FirstOrDefaultAsync(p => p.DNI == dni);
+        if (postulante == null) return null;
+
+        var examen = await _context.ExamenesAdmision
+            .Where(e => e.IdPostulante == postulante.IdPostulante)
+            .OrderByDescending(e => e.FechaExamen)
+            .FirstOrDefaultAsync();
+        if (examen == null) return null;
+
+        var resultado = await _context.ResultadosAdmision
+            .FirstOrDefaultAsync(r => r.IdPostulante == postulante.IdPostulante);
+
+        var programa = await _context.ProgramasAcademicos
+            .FirstOrDefaultAsync(p => p.IdProgramaAcademico == postulante.IdProgramaInteres);
+
+        var respuestas = await _context.RespuestasPostulante
+            .Where(r => r.IdPostulante == postulante.IdPostulante && r.IdExamen == examen.IdExamen)
+            .ToListAsync();
+
+        var preguntas = await _context.PreguntasExamen
+            .OrderBy(p => p.NumeroPregunta)
+            .ToListAsync();
+
+        var detalles = preguntas.Select(preg =>
+        {
+            var resp = respuestas.FirstOrDefault(r => r.IdPregunta == preg.IdPregunta);
+            return new DetalleRespuestaDto
+            {
+                NumeroPregunta = preg.NumeroPregunta,
+                Area = preg.Area,
+                Enunciado = preg.Enunciado,
+                OpcionA = preg.OpcionA,
+                OpcionB = preg.OpcionB,
+                OpcionC = preg.OpcionC,
+                OpcionD = preg.OpcionD,
+                RespuestaSeleccionada = resp?.RespuestaSeleccionada ?? "—",
+                RespuestaCorrecta = preg.RespuestaCorrecta,
+                EsCorrecta = resp?.EsCorrecta ?? false
+            };
+        }).ToList();
+
+        int correctas = detalles.Count(d => d.EsCorrecta);
+
+        return new ReporteDetalladoPostulanteDto
+        {
+            DNI = postulante.DNI,
+            Nombres = postulante.Nombres,
+            Apellidos = postulante.Apellidos,
+            ProgramaAcademico = programa?.Nombre ?? "",
+            Puntaje = examen.Puntaje ?? 0m,
+            TotalCorrectas = correctas,
+            TotalIncorrectas = 100 - correctas,
+            Estado = resultado?.Resultado ?? "Pendiente",
+            Puesto = resultado?.OrdenMerito ?? 0,
+            Respuestas = detalles
+        };
+    }
 }
+

@@ -28,7 +28,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SAA.API.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+153e8987347d6ae7202756c0f0a978c8646ddd46")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0871695047416d985e6b64792ded2dbec85375bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("SAA.API.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SAA.API.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
