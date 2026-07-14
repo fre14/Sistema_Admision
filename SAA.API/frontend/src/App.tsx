@@ -102,6 +102,260 @@ function App() {
     if (vistaPost === 'detalle') fetchMiDetalle();
   }, [vistaPost]);
 
+  const generarConstanciaPdf = () => {
+    if (!resultado) return;
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+
+    const fecha = new Date().toLocaleDateString('es-PE', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Constancia de Ingreso - SAA</title>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+          body {
+            background-color: #ffffff;
+            color: #1e293b;
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+          }
+          .certificate-border {
+            border: 12px double #1e3a8a;
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            background: #fff;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+          }
+          .certificate-border::before {
+            content: "";
+            position: absolute;
+            top: 5px; left: 5px; right: 5px; bottom: 5px;
+            border: 2px solid #b45309;
+            pointer-events: none;
+          }
+          .header {
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          .university-crest {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            font-family: 'Cinzel', serif;
+            box-shadow: 0 4px 10px rgba(30,58,138,0.2);
+          }
+          .university-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin: 0 0 4px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+          }
+          .office-name {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0;
+          }
+          .title {
+            text-align: center;
+            margin-bottom: 25px;
+          }
+          .title h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #b45309;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: 1px;
+          }
+          .title p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin: 6px 0 0;
+            font-weight: 500;
+          }
+          .content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 40px;
+            color: #334155;
+          }
+          .highlight {
+            font-weight: 700;
+            color: #0f172a;
+          }
+          .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+          }
+          .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+          }
+          .detail-lbl {
+            font-size: 0.78rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+          }
+          .detail-val {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e3a8a;
+          }
+          .signatures {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 50px;
+            padding: 0 30px;
+          }
+          .sig-box {
+            text-align: center;
+            width: 200px;
+          }
+          .sig-line {
+            border-top: 1px solid #94a3b8;
+            margin-bottom: 8px;
+          }
+          .sig-title {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 600;
+          }
+          .qr-placeholder {
+            width: 90px;
+            height: 90px;
+            border: 1px solid #cbd5e1;
+            padding: 4px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.55rem;
+            color: #94a3b8;
+            text-align: center;
+          }
+          .footer-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 40px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 15px;
+          }
+          @media print {
+            body { padding: 0; background: none; }
+            .certificate-border { box-shadow: none; max-width: 100%; border-width: 8px; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="certificate-border">
+          <div class="header">
+            <div class="university-crest">UNSCH</div>
+            <h2 class="university-name">Universidad Nacional de San Cristóbal de Huamanga</h2>
+            <p class="office-name">Oficina General de Admisión</p>
+          </div>
+
+          <div class="title">
+            <h1>CONSTANCIA DE INGRESO</h1>
+            <p>Proceso de Admisión Académica 2026</p>
+          </div>
+
+          <div class="content">
+            La Oficina General de Admisión de la Universidad Nacional de San Cristóbal de Huamanga hace constar que el postulante
+            <span class="highlight">${resultado.nombres} ${resultado.apellidos}</span>, identificado con DNI N° <span class="highlight">${userData?.nombreUsuario || ''}</span>,
+            ha participado en el Examen General de Admisión y ha obtenido una vacante de ingreso en esta casa superior de estudios.
+          </div>
+
+          <div class="details-grid">
+            <div class="detail-item">
+              <span class="detail-lbl">Programa Académico</span>
+              <span class="detail-val">${resultado.programa}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Modalidad</span>
+              <span class="detail-val">Examen General de Admisión</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Puntaje Obtenido</span>
+              <span class="detail-val">${resultado.puntaje} / 100.00</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-lbl">Orden de Mérito (Puesto)</span>
+              <span class="detail-val">Puesto N° ${resultado.puesto}</span>
+            </div>
+          </div>
+
+          <div class="signatures">
+            <div class="qr-placeholder">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=SAA-UNSCH-INGRESANTE-${userData?.nombreUsuario || ''}-${resultado.puesto}" alt="QR" width="80" height="80" />
+            </div>
+            <div class="sig-box">
+              <div class="sig-line"></div>
+              <span class="highlight">Dr. Richard Zapata C.</span>
+              <div class="sig-title">Director de Admisión</div>
+            </div>
+          </div>
+
+          <div class="footer-note">
+            Ayacucho, ${fecha} · Documento Oficial con verificación electrónica por QR.
+          </div>
+        </div>
+        <script>
+          window.onload = function() {
+            setTimeout(function() {
+              window.print();
+            }, 800);
+          }
+        </script>
+      </body>
+      </html>
+    `;
+
+    printWindow.document.write(htmlContent);
+    printWindow.document.close();
+  };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true); setError(null);
@@ -377,7 +631,12 @@ function App() {
               </div>
               <div className="result-footer">
                 {resultado.estado === 'Ingresante' ? (
-                  <div className="success-message">🎉 ¡Felicidades! Has logrado una vacante.</div>
+                  <>
+                    <div className="success-message" style={{ marginBottom: '12px' }}>🎉 ¡Felicidades! Has logrado una vacante.</div>
+                    <button className="primary-btn" style={{ background: 'linear-gradient(135deg, #10b981, #059669)', marginTop: '4px', width: '100%' }} onClick={generarConstanciaPdf}>
+                      📄 Descargar Constancia de Ingreso (PDF)
+                    </button>
+                  </>
                 ) : resultado.estado === 'Aprobado' ? (
                   <div className="warning-message">✅ Aprobaste el examen, pero no se alcanzó una vacante disponible.</div>
                 ) : (
