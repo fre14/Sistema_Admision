@@ -121,4 +121,64 @@ public class AdmisionController : ControllerBase
             return BadRequest(new { mensaje = "Error al exportar: " + ex.Message });
         }
     }
+
+    /// <summary>Obtener lista de todos los programas académicos</summary>
+    [HttpGet("programas")]
+    public async Task<IActionResult> ObtenerProgramas()
+    {
+        try
+        {
+            var programas = await _motorAdmisionService.ObtenerProgramasAsync();
+            return Ok(programas);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { mensaje = ex.Message });
+        }
+    }
+
+    /// <summary>Crear o actualizar un programa académico (incluye vacantes)</summary>
+    [HttpPost("programas")]
+    public async Task<IActionResult> GuardarPrograma([FromBody] SAA.Domain.Entities.ProgramaAcademico dto)
+    {
+        try
+        {
+            await _motorAdmisionService.GuardarProgramaAsync(dto);
+            return Ok(new { mensaje = "Programa académico guardado exitosamente." });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { mensaje = ex.Message });
+        }
+    }
+
+    /// <summary>Eliminar un programa académico por ID</summary>
+    [HttpDelete("programas/{id}")]
+    public async Task<IActionResult> EliminarPrograma(int id)
+    {
+        try
+        {
+            await _motorAdmisionService.EliminarProgramaAsync(id);
+            return Ok(new { mensaje = "Programa académico eliminado exitosamente." });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { mensaje = ex.Message });
+        }
+    }
+
+    /// <summary>Carga masiva de respuestas del examen (Lectora Óptica)</summary>
+    [HttpPost("carga-masiva")]
+    public async Task<IActionResult> CargaMasiva([FromBody] List<FilaCargaMasivaDto> filas)
+    {
+        try
+        {
+            int total = await _motorAdmisionService.CargaMasivaExamenesAsync(filas);
+            return Ok(new { mensaje = "Carga masiva completada con éxito.", procesados = total });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { mensaje = "Error en carga masiva: " + ex.Message });
+        }
+    }
 }

@@ -60,3 +60,9 @@ public class DistribucionPuntajeDto
     public string Rango { get; set; } = string.Empty; // "0-20", "21-40", etc.
     public int Cantidad { get; set; }
 }
+
+public class FilaCargaMasivaDto
+{
+    public string Dni { get; set; } = string.Empty;
+    public string Respuestas { get; set; } = string.Empty;
+}

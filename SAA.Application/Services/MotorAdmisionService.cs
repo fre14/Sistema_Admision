@@ -276,4 +276,129 @@ public class MotorAdmisionService
         }
         return sb.ToString();
     }
+
+    // ─────────────────────────────────────────────────────────────
+    // CRUD Programas y Vacantes
+    // ─────────────────────────────────────────────────────────────
+    public async Task<List<ProgramaAcademico>> ObtenerProgramasAsync()
+    {
+        return await _context.ProgramasAcademicos.ToListAsync();
+    }
+
+    public async Task GuardarProgramaAsync(ProgramaAcademico dto)
+    {
+        if (dto.IdProgramaAcademico == 0)
+        {
+            dto.FechaCreacion = DateTime.Now;
+            _context.ProgramasAcademicos.Add(dto);
+        }
+        else
+        {
+            var prog = await _context.ProgramasAcademicos.FindAsync(dto.IdProgramaAcademico);
+            if (prog != null)
+            {
+                prog.Nombre = dto.Nombre;
+                prog.Codigo = dto.Codigo;
+                prog.Departamento = dto.Departamento;
+                prog.Vacantes = dto.Vacantes;
+                prog.Estado = dto.Estado;
+                prog.FechaActualizacion = DateTime.Now;
+            }
+        }
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task EliminarProgramaAsync(int id)
+    {
+        var prog = await _context.ProgramasAcademicos.FindAsync(id);
+        if (prog != null)
+        {
+            _context.ProgramasAcademicos.Remove(prog);
+            await _context.SaveChangesAsync();
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────────
+    // Carga Masiva de Exámenes (Lectora Óptica)
+    // ─────────────────────────────────────────────────────────────
+    public async Task<int> CargaMasivaExamenesAsync(List<FilaCargaMasivaDto> filas)
+    {
+        int procesados = 0;
+        var preguntas = await _context.PreguntasExamen.OrderBy(p => p.NumeroPregunta).ToListAsync();
+        if (!preguntas.Any()) throw new Exception("No hay preguntas sembradas en el sistema.");
+
+        foreach (var fila in filas)
+        {
+            var dni = fila.Dni.Trim();
+            var respuestasStr = fila.Respuestas.Trim().ToUpper();
+
+            if (string.IsNullOrEmpty(dni) || respuestasStr.Length != 100) continue;
+
+            var postulante = await _context.Postulantes.FirstOrDefaultAsync(p => p.DNI == dni);
+            if (postulante == null) continue;
+
+            // Buscar si tiene ficha
+            var ficha = await _context.FichasPostulacion
+                .FirstOrDefaultAsync(f => f.IdPostulante == postulante.IdPostulante);
+            if (ficha == null) continue;
+
+            // Eliminar examen y respuestas anteriores si existen
+            var examenAnterior = await _context.ExamenesAdmision
+                .FirstOrDefaultAsync(e => e.IdPostulante == postulante.IdPostulante);
+            if (examenAnterior != null)
+            {
+                var respsAnteriores = await _context.RespuestasPostulante
+                    .Where(r => r.IdPostulante == postulante.IdPostulante && r.IdExamen == examenAnterior.IdExamen)
+                    .ToListAsync();
+                _context.RespuestasPostulante.RemoveRange(respsAnteriores);
+                _context.ExamenesAdmision.Remove(examenAnterior);
+                await _context.SaveChangesAsync();
+            }
+
+            // Calcular correctas
+            var respuestas = new List<RespuestaPostulante>();
+            int correctas = 0;
+
+            for (int i = 0; i < 100; i++)
+            {
+                var preg = preguntas[i];
+                var sel = respuestasStr[i].ToString();
+                bool esCorrecta = sel == preg.RespuestaCorrecta;
+                if (esCorrecta) correctas++;
+
+                respuestas.Add(new RespuestaPostulante
+                {
+                    IdPregunta = preg.IdPregunta,
+                    RespuestaSeleccionada = sel,
+                    EsCorrecta = esCorrecta
+                });
+            }
+
+            var examen = new ExamenAdmision
+            {
+                IdFichaPostulacion = ficha.IdFichaPostulacion,
+                IdPostulante = postulante.IdPostulante,
+                NombreExamen = "Examen de Lectora Óptica",
+                FechaExamen = DateTime.Now,
+                Estado = "Realizado",
+                Puntaje = correctas,
+                FechaCreacion = DateTime.Now
+            };
+
+            _context.ExamenesAdmision.Add(examen);
+            await _context.SaveChangesAsync();
+
+            foreach (var r in respuestas)
+            {
+                r.IdExamen = examen.IdExamen;
+                r.IdPostulante = postulante.IdPostulante;
+            }
+
+            _context.RespuestasPostulante.AddRange(respuestas);
+            await _context.SaveChangesAsync();
+            procesados++;
+        }
+
+        return procesados;
+    }
 }

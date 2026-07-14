@@ -3,7 +3,7 @@ import './App.css';
 
 const API_BASE_URL = import.meta.env.PROD ? 'https://sistema-admision-wlii.onrender.com' : '';
 
-type Vista = 'reporte' | 'estadisticas' | 'buscador';
+type Vista = 'reporte' | 'estadisticas' | 'buscador' | 'programas' | 'carga-masiva';
 
 function App() {
   const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
@@ -472,6 +472,8 @@ function App() {
             <button className={`nav-tab ${vistaAdmin === 'reporte' ? 'active' : ''}`} onClick={() => setVistaAdmin('reporte')}>📋 Reporte General</button>
             <button className={`nav-tab ${vistaAdmin === 'buscador' ? 'active' : ''}`} onClick={() => setVistaAdmin('buscador')}>🔍 Buscar por DNI</button>
             <button className={`nav-tab ${vistaAdmin === 'estadisticas' ? 'active' : ''}`} onClick={() => setVistaAdmin('estadisticas')}>📊 Estadísticas</button>
+            <button className={`nav-tab ${vistaAdmin === 'programas' ? 'active' : ''}`} onClick={() => setVistaAdmin('programas')}>🎓 Programas y Vacantes</button>
+            <button className={`nav-tab ${vistaAdmin === 'carga-masiva' ? 'active' : ''}`} onClick={() => setVistaAdmin('carga-masiva')}>📥 Lectora Óptica (Carga)</button>
           </nav>
         </header>
 
@@ -579,6 +581,14 @@ function App() {
                 <div className="error-alert">No hay estadísticas. Procesa el motor de admisión primero.</div>
               )}
             </div>
+          {/* ── PROGRAMAS Y VACANTES ── */}
+          {vistaAdmin === 'programas' && (
+            <ProgramasView token={token} handleLogout={handleLogout} />
+          )}
+
+          {/* ── LECTORA ÓPTICA ── */}
+          {vistaAdmin === 'carga-masiva' && (
+            <CargaMasivaView token={token} />
           )}
         </main>
 
@@ -879,6 +889,346 @@ function EstadisticasView({ data }: { data: any }) {
           </table>
         </div>
       </div>
+    </div>
+  );
+// ─────────────────────────────────────────────────────────
+// COMPONENTE: Gestión de Programas Académicos (CRUD)
+// ─────────────────────────────────────────────────────────
+interface ProgramasViewProps {
+  token: string;
+  handleLogout: () => void;
+}
+
+function ProgramasView({ token, handleLogout }: ProgramasViewProps) {
+  const [programas, setProgramas] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Formulario nuevo / edición
+  const [editId, setEditId] = useState<number | null>(null);
+  const [codigo, setCodigo] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [departamento, setDepartamento] = useState('');
+  const [vacantes, setVacantes] = useState<number>(30);
+  const [estado, setEstado] = useState('Activo');
+
+  const headers = useCallback(() => ({
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  }), [token]);
+
+  const fetchProgramas = useCallback(async () => {
+    setLoading(true); setError(null);
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admision/programas`, { headers: headers() });
+      if (res.ok) setProgramas(await res.json());
+      else if (res.status === 401) handleLogout();
+      else setError('Error al cargar programas.');
+    } catch {
+      setError('Error de conexión.');
+    } finally {
+      setLoading(false);
+    }
+  }, [headers, handleLogout]);
+
+  useEffect(() => {
+    fetchProgramas();
+  }, [fetchProgramas]);
+
+  const handleSave = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!nombre.trim() || !codigo.trim()) {
+      alert('Nombre y Código son requeridos.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const payload = {
+        idProgramaAcademico: editId || 0,
+        codigo: codigo.trim(),
+        nombre: nombre.trim(),
+        departamento: departamento.trim() || 'General',
+        vacantes: vacantes,
+        estado: estado
+      };
+
+      const res = await fetch(`${API_BASE_URL}/api/admision/programas`, {
+        method: 'POST',
+        headers: headers(),
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        alert('✅ Programa académico guardado.');
+        limpiarFormulario();
+        fetchProgramas();
+      } else {
+        alert('❌ Error al guardar programa.');
+      }
+    } catch {
+      alert('Error de conexión.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleEdit = (p: any) => {
+    setEditId(p.idProgramaAcademico);
+    setCodigo(p.codigo);
+    setNombre(p.nombre);
+    setDepartamento(p.departamento || '');
+    setVacantes(p.vacantes || 0);
+    setEstado(p.estado || 'Activo');
+  };
+
+  const handleDelete = async (id: number) => {
+    if (!confirm('¿Estás seguro de eliminar este programa académico?')) return;
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admision/programas/${id}`, {
+        method: 'DELETE',
+        headers: headers()
+      });
+      if (res.ok) {
+        alert('🗑️ Programa académico eliminado.');
+        fetchProgramas();
+      } else {
+        alert('Error al eliminar.');
+      }
+    } catch {
+      alert('Error de conexión.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const limpiarFormulario = () => {
+    setEditId(null);
+    setCodigo('');
+    setNombre('');
+    setDepartamento('');
+    setVacantes(30);
+    setEstado('Activo');
+  };
+
+  return (
+    <div className="glass-panel fade-in-up" style={{ padding: '28px' }}>
+      <h3>🎓 Gestión de Programas Académicos y Vacantes</h3>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+        Administra las carreras universitarias y el límite de cupos (vacantes) disponibles para el ingreso.
+      </p>
+
+      {/* Formulario */}
+      <form onSubmit={handleSave} className="glass-panel" style={{ padding: '20px', marginBottom: '24px', background: 'rgba(255,255,255,0.02)' }}>
+        <h4 style={{ marginBottom: '16px' }}>{editId ? '✏️ Editar Programa' : '➕ Añadir Nuevo Programa'}</h4>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '14px' }}>
+          <div className="input-group">
+            <label>Código</label>
+            <input type="text" value={codigo} onChange={e => setCodigo(e.target.value)} required placeholder="Ej: IS01" className="search-input" style={{ maxWidth: '100%' }} />
+          </div>
+          <div className="input-group">
+            <label>Nombre de la Carrera</label>
+            <input type="text" value={nombre} onChange={e => setNombre(e.target.value)} required placeholder="Ej: Ingeniería de Sistemas" className="search-input" style={{ maxWidth: '100%' }} />
+          </div>
+          <div className="input-group">
+            <label>Facultad / Departamento</label>
+            <input type="text" value={departamento} onChange={e => setDepartamento(e.target.value)} placeholder="Ej: Ingeniería" className="search-input" style={{ maxWidth: '100%' }} />
+          </div>
+          <div className="input-group">
+            <label>Vacantes</label>
+            <input type="number" value={vacantes} onChange={e => setVacantes(Number(e.target.value))} min={1} required className="search-input" style={{ maxWidth: '100%' }} />
+          </div>
+          <div className="input-group">
+            <label>Estado</label>
+            <select value={estado} onChange={e => setEstado(e.target.value)} className="select-filter" style={{ height: '45px', padding: '10px' }}>
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button type="submit" className="primary-btn btn-sm" disabled={loading}>
+            {editId ? 'Guardar Cambios' : 'Registrar Carrera'}
+          </button>
+          {editId && (
+            <button type="button" onClick={limpiarFormulario} className="logout-btn" style={{ height: '40px' }}>
+              Cancelar
+            </button>
+          )}
+        </div>
+      </form>
+
+      {error && <div className="error-alert">{error}</div>}
+
+      {/* Tabla */}
+      {loading && !programas.length ? (
+        <div className="loading-spinner">Cargando programas...</div>
+      ) : (
+        <div className="table-responsive">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Código</th><th>Programa / Carrera</th><th>Facultad</th>
+                <th style={{ textAlign: 'center' }}>Vacantes</th><th>Estado</th><th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {programas.map((p: any) => (
+                <tr key={p.idProgramaAcademico}>
+                  <td style={{ fontFamily: 'monospace', fontWeight: 'bold' }}>{p.codigo}</td>
+                  <td style={{ fontWeight: '600' }}>{p.nombre}</td>
+                  <td>{p.departamento}</td>
+                  <td style={{ textAlign: 'center', color: 'var(--primary)', fontWeight: 'bold' }}>{p.vacantes}</td>
+                  <td>
+                    <span className={`status-badge ${p.estado === 'Activo' ? 'ingresante' : 'pendiente'}`}>
+                      {p.estado}
+                    </span>
+                  </td>
+                  <td>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      <button onClick={() => handleEdit(p)} className="tab-btn" style={{ padding: '4px 10px', fontSize: '0.75rem' }}>✏️</button>
+                      <button onClick={() => handleDelete(p.idProgramaAcademico)} className="logout-btn" style={{ padding: '4px 10px', fontSize: '0.75rem', border: '1px solid rgba(239,68,68,0.2)' }}>🗑️</button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────
+// COMPONENTE: Carga Masiva (Lectora Óptica Simulada)
+// ─────────────────────────────────────────────────────────
+interface CargaMasivaViewProps {
+  token: string;
+}
+
+function CargaMasivaView({ token }: CargaMasivaViewProps) {
+  const [textoCarga, setTextoCarga] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [mensajeResultado, setMensajeResultado] = useState<string | null>(null);
+
+  const handleCargar = async () => {
+    if (!textoCarga.trim()) {
+      alert('Por favor ingresa datos en el cuadro de texto.');
+      return;
+    }
+
+    const lineas = textoCarga.trim().split('\n');
+    const payload: any[] = [];
+
+    for (const linea of lineas) {
+      const partes = linea.split(',');
+      if (partes.length !== 2) continue;
+      const dni = partes[0].trim();
+      const respuestas = partes[1].trim();
+      if (dni && respuestas.length === 100) {
+        payload.push({ dni, respuestas });
+      }
+    }
+
+    if (payload.length === 0) {
+      alert('No se encontraron líneas válidas. Formato requerido: DNI,100_RESPUESTAS');
+      return;
+    }
+
+    setLoading(true); setMensajeResultado(null);
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/admision/carga-masiva`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setMensajeResultado(`✅ Carga masiva exitosa: se procesaron e importaron las respuestas de ${data.procesados} postulantes.`);
+        setTextoCarga('');
+      } else {
+        alert(data.mensaje || 'Error al procesar la carga masiva.');
+      }
+    } catch {
+      alert('Error de conexión.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const generarEjemplo = () => {
+    const opciones = ['A', 'B', 'C', 'D'];
+    const lineas: string[] = [];
+
+    // Generar ejemplo para el usuario Prueba (12345678)
+    let respsPrueba = '';
+    for (let j = 0; j < 100; j++) {
+      respsPrueba += opciones[Math.floor(Math.random() * 4)];
+    }
+    lineas.push(`12345678,${respsPrueba}`);
+
+    // Generar algunos DNI correlativos
+    for (let i = 1; i <= 5; i++) {
+      const dni = (10000000 + i).toString();
+      let resps = '';
+      for (let j = 0; j < 100; j++) {
+        resps += opciones[Math.floor(Math.random() * 4)];
+      }
+      lineas.push(`${dni},${resps}`);
+    }
+
+    setTextoCarga(lineas.join('\n'));
+    setMensajeResultado(null);
+  };
+
+  return (
+    <div className="glass-panel fade-in-up" style={{ padding: '28px' }}>
+      <h3>📥 Carga Masiva desde Lectora Óptica</h3>
+      <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+        Simula la entrada de datos de la lectora óptica. Pega la lista de DNI junto con la cadena de las 100 respuestas marcadas por cada postulante.
+      </p>
+
+      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', marginBottom: '20px' }}>
+        <div style={{ flex: 2, minWidth: '300px' }}>
+          <textarea
+            value={textoCarga}
+            onChange={e => setTextoCarga(e.target.value)}
+            placeholder="Formato: DNI,RESPUESTAS&#10;Ejemplo:&#10;12345678,AABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCCDDAABBCC&#10;10000001,CCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDDCCDD"
+            style={{ width: '100%', height: '300px', background: 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid var(--glass-border)', borderRadius: '10px', padding: '16px', outline: 'none', fontFamily: 'monospace', fontSize: '0.85rem', lineHeight: '1.4' }}
+          />
+        </div>
+
+        <div style={{ flex: 1, minWidth: '240px' }} className="glass-panel" style={{ padding: '20px', background: 'rgba(255,255,255,0.02)' }}>
+          <h4 style={{ marginBottom: '12px' }}>📖 Instrucciones del Formato</h4>
+          <ul style={{ fontSize: '0.82rem', color: 'var(--text-muted)', paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+            <li>Cada fila representa un postulante.</li>
+            <li>El formato debe ser: <code>[DNI],[100 RESPUESTAS]</code>.</li>
+            <li>No deben haber espacios alrededor de la coma.</li>
+            <li>La cadena de respuestas debe tener exactamente <strong>100 caracteres</strong> (letras A, B, C o D).</li>
+            <li>Cualquier otra letra se considerará respuesta omitida o incorrecta.</li>
+          </ul>
+
+          <button onClick={generarEjemplo} className="logout-btn" style={{ width: '100%', marginBottom: '10px' }}>
+            📋 Generar datos de prueba
+          </button>
+        </div>
+      </div>
+
+      {mensajeResultado && (
+        <div className="success-message" style={{ marginBottom: '20px' }}>
+          {mensajeResultado}
+        </div>
+      )}
+
+      <button onClick={handleCargar} className="primary-btn" disabled={loading} style={{ maxWidth: '300px' }}>
+        {loading ? '⏳ Procesando carga...' : '🚀 Cargar y Evaluar Respuestas'}
+      </button>
     </div>
   );
 }
