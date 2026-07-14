@@ -59,6 +59,23 @@ public class SeedDataService
                 await _context.SaveChangesAsync();
             }
 
+            // ── NUEVO: Limpiar postulantes antiguos ficticios si existen ──
+            var tieneFicticios = _context.Postulantes.Any(p => p.Nombres.Contains("Generado") || p.Apellidos.Contains("Generado"));
+            if (tieneFicticios)
+            {
+                Console.WriteLine("[Seed] Limpiando base de datos de postulantes ficticios antiguos...");
+                
+                // Limpiar en cascada
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM [Admision].[RespuestaPostulante]");
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM [Admision].[ExamenAdmision]");
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM [Admision].[FichaPostulacion]");
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM [Admision].[Postulante]");
+                await _context.Database.ExecuteSqlRawAsync("DELETE FROM [Seguridad].[Usuario] WHERE Rol = 'Postulante'");
+                await _context.SaveChangesAsync();
+                
+                Console.WriteLine("[Seed] Limpieza completada.");
+            }
+
             var programas = _context.ProgramasAcademicos.ToList();
             var preguntas = _context.PreguntasExamen.OrderBy(p => p.NumeroPregunta).ToList();
             var rnd = new Random(12345);
