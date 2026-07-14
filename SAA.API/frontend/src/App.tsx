@@ -26,7 +26,7 @@ function App() {
   const [reporte, setReporte] = useState<any[]>([]);
   const [filtroPrograma, setFiltroPrograma] = useState('');
   const [vistaAdmin, setVistaAdmin] = useState<Vista>('reporte');
-  const [subVista, setSubVista] = useState<'ingresantes' | 'todos'>('ingresantes');
+  const [subVista, setSubVista] = useState<'ingresantes' | 'no_admitidos' | 'todos'>('ingresantes');
   const [estadisticas, setEstadisticas] = useState<any>(null);
   const [busquedaDni, setBusquedaDni] = useState('');
   const [resultadoBusqueda, setResultadoBusqueda] = useState<any>(null);
@@ -445,7 +445,11 @@ function App() {
   // ──────────────── ADMIN ────────────────
   if (userData?.rol === 'Administrador') {
     const listadoBase = vistaAdmin === 'reporte'
-      ? (subVista === 'ingresantes' ? reporte.filter(r => r.estado === 'Ingresante') : reporte)
+      ? (subVista === 'ingresantes' 
+          ? reporte.filter(r => r.estado === 'Ingresante') 
+          : subVista === 'no_admitidos' 
+            ? reporte.filter(r => r.estado !== 'Ingresante') 
+            : reporte)
       : [];
     const programasUnicos = [...new Set(reporte.map(r => r.programaAcademico))].sort();
     const listadoFinal = filtroPrograma ? listadoBase.filter(r => r.programaAcademico === filtroPrograma) : listadoBase;
@@ -490,6 +494,7 @@ function App() {
 
               <div className="tab-group" style={{ marginBottom: '20px' }}>
                 <button className={`tab-btn ${subVista === 'ingresantes' ? 'active' : ''}`} onClick={() => setSubVista('ingresantes')}>✅ Ingresantes</button>
+                <button className={`tab-btn ${subVista === 'no_admitidos' ? 'active' : ''}`} onClick={() => setSubVista('no_admitidos')}>❌ No Admitidos</button>
                 <button className={`tab-btn ${subVista === 'todos' ? 'active' : ''}`} onClick={() => setSubVista('todos')}>👥 Todos</button>
               </div>
 
